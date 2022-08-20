@@ -6,8 +6,8 @@ using UnityEngine;
 public class StatsController : MonoBehaviour
 {
     public static StatsController Instance;
-    
-    private long population;
+
+    private int population;
     private double populationGrowth;
     private int food;
     private int freeLand;
@@ -15,13 +15,14 @@ public class StatsController : MonoBehaviour
     private double unemployment; //percentage 0-100
     private float creativePotential; // 0.5 - 1.5
     private int environment; // 1 - 5
-    
+
     #region GettersSetters
-    
-    public long Population
-    { 
+
+    public int Population
+    {
         get => population;
-        private set {
+        private set
+        {
             if (value > 0)
                 population = value;
             else
@@ -34,39 +35,39 @@ public class StatsController : MonoBehaviour
     public double PopulationGrowth
     {
         get => populationGrowth;
-        private set
-        {
-            populationGrowth = Math.Round(value, 2);
-        }
+        private set { populationGrowth = Math.Round(value, 2); }
     }
 
     public int Food
     {
         get => food;
-        private set {
+        private set
+        {
             if (value >= 0)
                 food = value;
         }
     }
-        
+
     public int FreeLand
     {
         get => freeLand;
-        private set {
+        private set
+        {
             if (value >= 0)
                 freeLand = value;
         }
     }
-        
+
     public int Money
     {
         get => money;
-        private set {
+        private set
+        {
             if (value >= 0)
                 money = value;
         }
     }
-        
+
     public double Unemployment
     {
         get => unemployment;
@@ -77,11 +78,12 @@ public class StatsController : MonoBehaviour
                 Debug.LogError("tried to set unemployment to invalid number");
                 return;
             }
+
             value = Math.Round(value, 1);
             unemployment = value;
         }
     }
-        
+
     public int Environment
     {
         get => environment;
@@ -91,25 +93,64 @@ public class StatsController : MonoBehaviour
                 environment = value;
         }
     }
-    
+
     #endregion
 
     #region StatsChangers
 
     public void GrowPop()
     {
-        long newPop = (long)((long) population * PopulationGrowth);
+        int newPop = (int)((long)population * PopulationGrowth);
         population += newPop;
     }
 
-    public void ChangePopGrowthByAmount(float amount)
+    public void AddPopByAmount(int amount)
     {
-        PopulationGrowth += amount;
+        if (amount < 0)
+        {
+            Debug.LogError("tried to add negative pop");
+            return;
+        }
+
+        population += amount;
     }
 
-    public void ChangePopGrowthByPercentage(float percentage)
+    public void SubtractPopByAmount(int amount)
     {
-        PopulationGrowth *= percentage;
+        if (amount < 0)
+        {
+            Debug.LogError("tried to subtract negative pop");
+            return;
+        }
+
+        if (amount > population)
+        {
+            // population will be 0, game over?
+            amount = population;
+        }
+        population -= amount;
+    }
+
+    public void ChangePopByPercentage(int percentage)
+    {
+        float realPercentage = GetPercentageFromInt(percentage);
+
+        int newPop = (int)(population * realPercentage);
+        population = newPop;
+    }
+
+    public void ChangePopGrowthByAmount(int amount)
+    {
+        float realAmount = GetPercentageFromInt(amount);
+        
+        PopulationGrowth += realAmount;
+    }
+
+    public void ChangePopGrowthByPercentage(int percentage)
+    {
+        float realPercentage = GetPercentageFromInt(percentage);
+        
+        PopulationGrowth *= realPercentage;
     }
 
     public void AddFood(int newFood)
@@ -138,6 +179,24 @@ public class StatsController : MonoBehaviour
             foodTaken = food;
         }
         food -= foodTaken;
+    }
+
+    public void AddFreeLandByAmount(int amount)
+    {
+        
+    }
+
+    public void SubtractFreeLandByAmount(int amount)
+    {
+        
+    }
+
+    public void ChangeFreeLandByPercentage(int percentage)
+    {
+        float realPercentage = GetPercentageFromInt(percentage);
+
+        int newFreeLand = (int)(FreeLand * realPercentage);
+        FreeLand = newFreeLand;
     }
 
     public void AddMoneyByAmount(int amount)
@@ -175,7 +234,7 @@ public class StatsController : MonoBehaviour
         Money = newMoney;
     }
 
-    public void AddEmploymentByAmount(int amount)
+    public void AddUnemploymentByAmount(int amount)
     {
         if (amount < 0)
         {
@@ -195,7 +254,7 @@ public class StatsController : MonoBehaviour
 
     }
     
-    public void SubtractEmploymentByAmount(int amount)
+    public void SubtractUnemploymentByAmount(int amount)
     {
         if (amount < 0)
         {
@@ -252,6 +311,13 @@ public class StatsController : MonoBehaviour
     {
         StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, Money, Unemployment,
             Environment);
+    }
+
+    private float GetPercentageFromInt(int num)
+    {
+        float percentage = (float) num / 100f;
+
+        return percentage;
     }
     
 }
