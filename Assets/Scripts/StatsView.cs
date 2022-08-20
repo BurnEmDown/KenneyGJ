@@ -9,6 +9,7 @@ public class StatsView : MonoBehaviour
     public Text popGrowthText;
     public Text foodText;
     public Text freeLandText;
+    public Text farmsText;
     public Text moneyText;
     public Text unemploymentText;
     public GameObject environmentBar;
@@ -23,25 +24,26 @@ public class StatsView : MonoBehaviour
         }
     }
 
-    public void UpdateAllStats(long pop, double popGrowth, int food, int freeLand, int money, double unemployment, int environment)
+    public void UpdateAllStats(int pop, double popGrowth, int food, int freeLand, int farms, int money, double unemployment, int environment)
     {
         UpdatePop(pop);
         UpdatePopGrowth(popGrowth);
         UpdateFood(food);
         UpdateFreeLand(freeLand);
+        UpdateFarms(farms);
         UpdateMoney(money);
         UpdateUnemployment(unemployment);
         UpdateEnvironment(environment);
     }
 
-    public void UpdatePop(long pop)
+    public void UpdatePop(int pop)
     {
-        popText.text = pop.ToString();
+        popText.text = pop.ToString() + "M";
     }
 
     public void UpdatePopGrowth(double popGrowth)
     {
-        popGrowthText.text = popGrowth.ToString();
+        popGrowthText.text = popGrowth.ToString() + "%";
     }
 
     public void UpdateFood(int food)
@@ -53,15 +55,20 @@ public class StatsView : MonoBehaviour
     {
         freeLandText.text = freeLand.ToString();
     }
+    
+    public void UpdateFarms(int farms)
+    {
+        farmsText.text = farms.ToString();
+    }
 
     public void UpdateMoney(int money)
     {
-        moneyText.text = money.ToString();
+        moneyText.text = money.ToString() + "T$";
     }
 
     public void UpdateUnemployment(double unemployment)
     {
-        unemploymentText.text = unemployment.ToString();
+        unemploymentText.text = unemployment.ToString() + "%";
     }
 
     public void UpdateEnvironment(int environment)

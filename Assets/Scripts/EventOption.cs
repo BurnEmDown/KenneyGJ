@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EventOption : ScriptableObject
 {
-    public string optionName;
     public string optionText;
     public List<EventEffect> effects;
 
@@ -66,6 +65,23 @@ public class EventOption : ScriptableObject
                         else
                         {
                             StatsController.Instance.AddFreeLandByAmount(effect.amount);
+                        }
+                    }
+                    break;
+                case Stats.Farms:
+                    if (effect.isPercentage)
+                    {
+                        StatsController.Instance.ChangeFarmsByPercentage(effect.amount);
+                    }
+                    else
+                    {
+                        if (effect.amount <= 0)
+                        {
+                            StatsController.Instance.SubtractFarmsByAmount(effect.amount);
+                        }
+                        else
+                        {
+                            StatsController.Instance.AddFarmsByAmount(effect.amount);
                         }
                     }
                     break;

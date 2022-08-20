@@ -10,6 +10,7 @@ public class StatsController : MonoBehaviour
     private int population;
     private double populationGrowth;
     private int food;
+    private int farms;
     private int freeLand;
     private int money;
     private double unemployment; //percentage 0-100
@@ -45,6 +46,16 @@ public class StatsController : MonoBehaviour
         {
             if (value >= 0)
                 food = value;
+        }
+    }
+
+    public int Farms
+    {
+        get => farms;
+        private set
+        {
+            if (value >= 0)
+                farms = value;
         }
     }
 
@@ -183,15 +194,67 @@ public class StatsController : MonoBehaviour
 
     public void AddFreeLandByAmount(int amount)
     {
-        
+        if (amount < 0)
+        {
+            Debug.LogError("tried to add negative free land");
+            return;
+        }
+
+        freeLand += amount;
     }
 
     public void SubtractFreeLandByAmount(int amount)
     {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to subtract negative free land");
+            return;
+        }
         
+        if (amount > freeLand)
+        {
+            // too much free land was taken, need to hurt player
+            amount = freeLand;
+        }
+        freeLand -= amount;
     }
 
     public void ChangeFreeLandByPercentage(int percentage)
+    {
+        float realPercentage = GetPercentageFromInt(percentage);
+
+        int newFreeLand = (int)(FreeLand * realPercentage);
+        FreeLand = newFreeLand;
+    }
+    
+    public void AddFarmsByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to add negative farms");
+            return;
+        }
+
+        farms += amount;
+    }
+
+    public void SubtractFarmsByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to subtract negative farms");
+            return;
+        }
+        
+        if (amount > farms)
+        {
+            // too much farms was taken, need to hurt player
+            amount = farms;
+        }
+        farms -= amount;
+    }
+
+    public void ChangeFarmsByPercentage(int percentage)
     {
         float realPercentage = GetPercentageFromInt(percentage);
 
@@ -309,7 +372,7 @@ public class StatsController : MonoBehaviour
 
     public void UpdateAllViews()
     {
-        StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, Money, Unemployment,
+        StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, farms, Money, Unemployment,
             Environment);
     }
 
