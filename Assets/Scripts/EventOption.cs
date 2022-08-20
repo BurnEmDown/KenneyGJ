@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class EventOption : MonoBehaviour
+[CreateAssetMenu]
+public class EventOption : ScriptableObject
 {
     public string optionName;
     public string optionText;
-    
+    public Action effects;
 }

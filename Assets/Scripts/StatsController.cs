@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class StatsController : MonoBehaviour
 {
-    public StatsController Instance;
+    public static StatsController Instance;
     
     private long population;
     private double populationGrowth;
     private int food;
     private int freeLand;
     private int money;
-    private int unemployment; //percentage 0-100
+    private double unemployment; //percentage 0-100
     private float creativePotential; // 0.5 - 1.5
     private int environment; // 1 - 5
     
@@ -67,12 +67,18 @@ public class StatsController : MonoBehaviour
         }
     }
         
-    public int Unemployment
+    public double Unemployment
     {
         get => unemployment;
-        private set {
-            if (value is >= 0 and <= 100)
-                unemployment = value;
+        private set
+        {
+            if (value is < 0.0 or > 100.0)
+            {
+                Debug.LogError("tried to set unemployment to invalid number");
+                return;
+            }
+            value = Math.Round(value, 1);
+            unemployment = value;
         }
     }
         
