@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnController : MonoBehaviour
 {
-    public TurnController Instance;
+    public static TurnController Instance;
 
     private int year;
     private int quarter;
@@ -22,12 +22,32 @@ public class TurnController : MonoBehaviour
     public void NewYear()
     {
         // calculate new money, food, population, etc.
-        // show the new year event 
-        // show the new quarter event
+        
+        // indicate changes to the player with text
+        
+        // show the new year event, then show the event of the first quarter of the year
+        EventsController.Instance.ShowNewYearEvent(NextQuarter);
     }
 
     public void NextQuarter()
     {
         // show the new quarter event
+        EventsController.Instance.ShowNewEvent(() =>
+        {
+            quarter++;
+            if (quarter == 4)
+            {
+                quarter = 1;
+                year++;
+                TurnView.Instance.UpdateDate(quarter, year);
+                NewYear();
+            }
+            else
+            {
+                TurnView.Instance.UpdateDate(quarter);
+                NextQuarter();
+            }
+            
+        });
     }
 }

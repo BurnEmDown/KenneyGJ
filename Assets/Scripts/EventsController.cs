@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class EventsController : MonoBehaviour
 {
-    public EventsController Instance;
-    
+    public static EventsController Instance;
+
+    private List<Event> eventsList;
+
     void Awake()
     {
         if(Instance)
@@ -14,5 +18,19 @@ public class EventsController : MonoBehaviour
         }
     }
 
-    
+    public void ShowNewEvent(Action onComplete)
+    {
+        
+        
+        
+        onComplete.Invoke();
+    }
+
+    public void ShowNewYearEvent(Action onComplete)
+    {
+        
+        
+        
+        onComplete.Invoke();
+    }
 }

@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Event : MonoBehaviour
+[CreateAssetMenu]
+public class Event : ScriptableObject
 {
         public string eventName;
         public string eventText;
