@@ -247,5 +247,11 @@ public class StatsController : MonoBehaviour
             Instance = this;
         }
     }
+
+    public void UpdateAllViews()
+    {
+        StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, Money, Unemployment,
+            Environment);
+    }
     
 }

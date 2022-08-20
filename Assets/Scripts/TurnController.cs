@@ -23,7 +23,8 @@ public class TurnController : MonoBehaviour
     {
         // calculate new money, food, population, etc.
         
-        // indicate changes to the player with text
+        // indicate changes to the player on UI
+        StatsController.Instance.UpdateAllViews();
         
         // show the new year event, then show the event of the first quarter of the year
         EventsController.Instance.ShowNewYearEvent(NextQuarter);
