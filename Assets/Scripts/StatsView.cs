@@ -11,7 +11,7 @@ public class StatsView : MonoBehaviour
     public Text freeLandText;
     public Text moneyText;
     public Text unemploymentText;
-    public Text environmentText;
+    public GameObject environmentBar;
     
     void Awake()
     {
@@ -46,26 +46,26 @@ public class StatsView : MonoBehaviour
 
     public void UpdateFood(int food)
     {
-        
+        foodText.text = food.ToString();
     }
 
     public void UpdateFreeLand(int freeLand)
     {
-        
+        freeLandText.text = freeLand.ToString();
     }
 
     public void UpdateMoney(int money)
     {
-        
+        moneyText.text = money.ToString();
     }
 
     public void UpdateUnemployment(double unemployment)
     {
-        
+        unemploymentText.text = unemployment.ToString();
     }
 
     public void UpdateEnvironment(int environment)
     {
-        
+        // this one is a bar that gets filled
     }
 }
