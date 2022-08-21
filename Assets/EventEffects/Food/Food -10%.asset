@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Food -10%
   m_EditorClassIdentifier: 
   statAffected: 2
-  intAmount: 90
-  floatAmount: 0
+  intAmount: 0
+  floatAmount: 0.9
   isPercentage: 1

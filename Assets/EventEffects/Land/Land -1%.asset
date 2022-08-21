@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Land -1%
   m_EditorClassIdentifier: 
   statAffected: 3
-  intAmount: 99
-  floatAmount: 0
+  intAmount: 0
+  floatAmount: 0.99
   isPercentage: 1

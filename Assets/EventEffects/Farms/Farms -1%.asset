@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Farms -1%
   m_EditorClassIdentifier: 
   statAffected: 4
-  intAmount: 99
-  floatAmount: 0
+  intAmount: 0
+  floatAmount: 0.99
   isPercentage: 1

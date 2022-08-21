@@ -19,7 +19,7 @@ public class EventOption : ScriptableObject
                 case Stats.Population:
                     if (effect.isPercentage)
                     {
-                        StatsController.Instance.ChangePopByPercentage(effect.intAmount);
+                        StatsController.Instance.ChangePopByPercentage(effect.floatAmount);
                     }
                     else
                     {
@@ -37,19 +37,27 @@ public class EventOption : ScriptableObject
                     StatsController.Instance.ChangePopGrowthByAmount(effect.floatAmount);
                     break;
                 case Stats.Food:
-                    if (effect.intAmount <= 0)
+                    if (effect.isPercentage)
                     {
-                        StatsController.Instance.SubtractFood(effect.intAmount);
+                        StatsController.Instance.ChangeFoodByPercentage(effect.floatAmount);
                     }
                     else
                     {
-                        StatsController.Instance.AddFood(effect.intAmount);
+                        if (effect.intAmount <= 0)
+                        {
+                            StatsController.Instance.SubtractFood(effect.intAmount);
+                        }
+                        else
+                        {
+                            StatsController.Instance.AddFood(effect.intAmount);
+                        }
+                        
                     }
                     break;
                 case Stats.FreeLand:
                     if (effect.isPercentage)
                     {
-                        StatsController.Instance.ChangeFreeLandByPercentage(effect.intAmount);
+                        StatsController.Instance.ChangeFreeLandByPercentage(effect.floatAmount);
                     }
                     else
                     {
@@ -66,7 +74,7 @@ public class EventOption : ScriptableObject
                 case Stats.Farms:
                     if (effect.isPercentage)
                     {
-                        StatsController.Instance.ChangeFarmsByPercentage(effect.intAmount);
+                        StatsController.Instance.ChangeFarmsByPercentage(effect.floatAmount);
                     }
                     else
                     {
@@ -83,7 +91,7 @@ public class EventOption : ScriptableObject
                 case Stats.Money:
                     if (effect.isPercentage)
                     {
-                        StatsController.Instance.ChangeMoneyByPercentage(effect.intAmount);
+                        StatsController.Instance.ChangeMoneyByPercentage(effect.floatAmount);
                     }
                     else
                     {
@@ -110,7 +118,7 @@ public class EventOption : ScriptableObject
                 case Stats.Unemployment:
                     if (effect.isPercentage)
                     {
-                        StatsController.Instance.ChangeUnemploymentByPercentage(effect.intAmount);
+                        StatsController.Instance.ChangeUnemploymentByPercentage(effect.floatAmount);
                     }
                     else
                     {

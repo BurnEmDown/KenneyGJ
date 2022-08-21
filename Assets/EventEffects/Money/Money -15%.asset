@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Money -15%
   m_EditorClassIdentifier: 
   statAffected: 5
-  intAmount: 85
-  floatAmount: 0
+  intAmount: 0
+  floatAmount: 0.85
   isPercentage: 1

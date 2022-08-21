@@ -143,11 +143,9 @@ public class StatsController : MonoBehaviour
         Population -= amount;
     }
 
-    public void ChangePopByPercentage(int percentage)
+    public void ChangePopByPercentage(float percentage)
     {
-        float realPercentage = GetPercentageFromInt(percentage);
-
-        int newPop = (int)(Population * realPercentage);
+        int newPop = (int)(Population * percentage);
         Population = newPop;
     }
 
@@ -180,6 +178,18 @@ public class StatsController : MonoBehaviour
         Food -= foodTaken;
     }
 
+    public void ChangeFoodByPercentage(float percentage)
+    {
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change food with negative percentage");
+            return;
+        }
+        
+        int newFood = (int)(Food * percentage);
+        Food = newFood;
+    }
+
     public void AddFreeLandByAmount(int amount)
     {
         if (amount < 0)
@@ -203,20 +213,28 @@ public class StatsController : MonoBehaviour
         FreeLand -= amount;
     }
 
-    public void ChangeFreeLandByPercentage(int percentage)
+    public void ChangeFreeLandByPercentage(float percentage)
     {
-        float realPercentage = GetPercentageFromInt(percentage);
-
-        int newFreeLand = (int)(FreeLand * realPercentage);
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change free land with negative percentage");
+            return;
+        }
+        
+        int newFreeLand = (int)(FreeLand * percentage);
         FreeLand = newFreeLand;
     }
     
-    public void ChangeFarmsByPercentage(int percentage)
+    public void ChangeFarmsByPercentage(float percentage)
     {
-        float realPercentage = GetPercentageFromInt(percentage);
-
-        int newFreeLand = (int)(FreeLand * realPercentage);
-        FreeLand = newFreeLand;
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change farms with negative percentage");
+            return;
+        }
+        
+        int newFarms = (int)(Farms * percentage);
+        Farms = newFarms;
     }
     
     public void AddFarmsByAmount(int amount)
