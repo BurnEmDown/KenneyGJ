@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Happiness +25%
   m_EditorClassIdentifier: 
   statAffected: 0
-  intAmount: 10
+  intAmount: 25
   floatAmount: 0
   isPercentage: 0
