@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class EventOption : ScriptableObject
 {
     public string optionText;
     public List<EventEffect> effects;
+    public Button assignedButton;
 
     public void ActivateEffects()
     {
@@ -141,5 +143,15 @@ public class EventOption : ScriptableObject
                     break;
             }
         }
+    }
+
+    public void DisableOption()
+    {
+        assignedButton.interactable = false;
+    }
+
+    public void EnableOption()
+    {
+        assignedButton.interactable = true;
     }
 }

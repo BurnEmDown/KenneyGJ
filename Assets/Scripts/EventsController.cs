@@ -49,6 +49,7 @@ public class EventsController : MonoBehaviour
                         if (!effect.isPercentage && StatsController.Instance.Money + effect.amount < 0)
                         {
                             // disable option
+                            option.DisableOption();
                         }
                         break;
                     
@@ -56,18 +57,21 @@ public class EventsController : MonoBehaviour
                         if (!effect.isPercentage && StatsController.Instance.FreeLand + effect.amount < 0)
                         {
                             // disable option
+                            option.DisableOption();
                         }
                         break;
                     case Stats.Food:
                         if (!effect.isPercentage && StatsController.Instance.Food + effect.amount < 0)
                         {
                             // disable option
+                            option.DisableOption();
                         }
                         break;
                     case Stats.Farms:
                         if (!effect.isPercentage && StatsController.Instance.Farms + effect.amount < 0)
                         {
                             // disable option
+                            option.DisableOption();
                         }
                         break;
                     default:
