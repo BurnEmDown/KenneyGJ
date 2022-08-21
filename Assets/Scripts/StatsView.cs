@@ -1,18 +1,19 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class StatsView : MonoBehaviour
 {
     public static StatsView Instance;
 
-    public Text popText;
-    public Text popGrowthText;
-    public Text foodText;
-    public Text freeLandText;
-    public Text farmsText;
-    public Text moneyText;
-    public Text happinessText;
-    public Text unemploymentText;
+    public TMP_Text popText;
+    public TMP_Text popGrowthText;
+    public TMP_Text foodText;
+    public TMP_Text freeLandText;
+    public TMP_Text farmsText;
+    public TMP_Text moneyText;
+    public TMP_Text happinessText;
+    public TMP_Text unemploymentText;
     public GameObject environmentBar;
     
     void Awake()
