@@ -6,15 +6,15 @@ public class StatsView : MonoBehaviour
 {
     public static StatsView Instance;
 
-    public TMP_Text popText;
-    public TMP_Text popGrowthText;
-    public TMP_Text foodText;
-    public TMP_Text freeLandText;
-    public TMP_Text farmsText;
-    public TMP_Text moneyText;
-    public TMP_Text happinessText;
+    public Slider environmentBar;
     public TMP_Text unemploymentText;
-    public GameObject environmentBar;
+    public TMP_Text happinessText;
+    public TMP_Text moneyText;
+    public TMP_Text farmsText;
+    public TMP_Text freeLandText;
+    public TMP_Text foodText;
+    public TMP_Text popGrowthText;
+    public TMP_Text popText;
     
     void Awake()
     {
@@ -83,6 +83,6 @@ public class StatsView : MonoBehaviour
 
     public void UpdateEnvironment(int environment)
     {
-        // this one is a bar that gets filled
+        environmentBar.value = environment;
     }
 }
