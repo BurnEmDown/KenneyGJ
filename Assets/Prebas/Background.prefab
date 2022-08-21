@@ -266,9 +266,9 @@ MonoBehaviour:
   LandBad: {r: 0.31132078, g: 0.27523774, b: 0.15977217, a: 0.7254902}
   AtmosphereGood: {r: 1, g: 1, b: 1, a: 0.21960784}
   AtmosphereBad: {r: 0.6901961, g: 0.16215798, b: 0, a: 0.64705884}
-  Ocean: {fileID: 0}
-  Land: {fileID: 0}
-  Atmosphere: {fileID: 0}
+  Ocean: {fileID: 4028699987055327489}
+  Land: {fileID: 3987324597312855553}
+  Atmosphere: {fileID: 3563286829151009370}
 --- !u!1 &3223310162546080586
 GameObject:
   m_ObjectHideFlags: 0

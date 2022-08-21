@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Nothing Happened
+  m_EditorClassIdentifier: 
+  eventName: Nothing Happened
+  eventText: "Nothing to report in the last few months, business continues as usual\u2026"
+  eventOptions:
+  - {fileID: 11400000, guid: f8dfbf70ad2221f45a0f9538e27b090c, type: 2}
+  - {fileID: 11400000, guid: a2e7be5f2c345034aa93e59e2f09ea78, type: 2}

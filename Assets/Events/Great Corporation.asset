@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Great Corporation
+  m_EditorClassIdentifier: 
+  eventName: Great Corporation
+  eventText: "A brilliant entrepreneur managed to create one of the most successful
+    commercial companies in the history of mankind, starting from his own parent\u2019s
+    garage!"
+  eventOptions:
+  - {fileID: 11400000, guid: 2400c97a91ed41546a0e0638d938d1bb, type: 2}
+  - {fileID: 11400000, guid: 076e68626bd897d448553372e7986fcc, type: 2}

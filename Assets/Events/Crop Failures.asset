@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Crop Failures
+  m_EditorClassIdentifier: 
+  eventName: Crop Failures
+  eventText: A dry winter is gripping the planet, leading to rising fears of the
+    coming crop failures. How should we address this issue?
+  eventOptions:
+  - {fileID: 11400000, guid: 4da61549ba24b124994eb986de5caceb, type: 2}
+  - {fileID: 11400000, guid: 1013cd5242e8c8e4d89c11cd39361225, type: 2}
+  - {fileID: 11400000, guid: 6ea19dbf6fd5b9e44af62b6dfe087613, type: 2}
