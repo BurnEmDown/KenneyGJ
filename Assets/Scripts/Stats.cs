@@ -6,6 +6,7 @@
         FreeLand,
         Farms,
         Money,
+        Happiness,
         Unemployment,
         Environment
 }

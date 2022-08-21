@@ -6,12 +6,15 @@ public class EventsController : MonoBehaviour
 {
     public static EventsController Instance;
 
-    private List<Event> eventsList;
+    private List<Event> quarterEventsList;
+    private List<Event> newYearEventsList;
 
     void Awake()
     {
-        if(Instance)
-            return;
+        if (Instance)
+        {
+            Destroy(this);
+        }
         else
         {
             Instance = this;

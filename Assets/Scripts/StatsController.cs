@@ -316,7 +316,7 @@ public class StatsController : MonoBehaviour
         Money = newMoney;
     }
 
-    public void AddMoneyFromPopulation()
+    public void CollectMoneyFromPopulation()
     {
         double employment = 100 - Unemployment;
         Money += (int) (Population * employment / 100);
@@ -338,6 +338,24 @@ public class StatsController : MonoBehaviour
 
 
         Happiness += amount;
+    }
+    
+    public void SubtractHappinessByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to subtract negative happiness");
+            return;
+        }
+
+        if (Happiness - amount < 0)
+        {
+            Happiness = 0;
+            return;
+        }
+
+
+        Happiness -= amount;
     }
 
     public void AddUnemploymentByAmount(int amount)
@@ -405,8 +423,10 @@ public class StatsController : MonoBehaviour
     
     void Awake()
     {
-        if(Instance)
-            return;
+        if (Instance)
+        {
+            Destroy(this);
+        }
         else
         {
             Instance = this;
@@ -426,4 +446,10 @@ public class StatsController : MonoBehaviour
         return percentage;
     }
     
+    public void NewYearCalculations()
+    {
+        GrowFoodFromFarms();
+        CollectMoneyFromPopulation();
+        GrowPop();
+    }
 }

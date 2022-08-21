@@ -102,6 +102,16 @@ public class EventOption : ScriptableObject
                         }
                     }
                     break;
+                case Stats.Happiness:
+                    if (effect.amount <= 0)
+                    {
+                        StatsController.Instance.SubtractHappinessByAmount(effect.amount);
+                    }
+                    else
+                    {
+                        StatsController.Instance.AddHappinessByAmount(effect.amount);
+                    }
+                    break;
                 case Stats.Unemployment:
                     if (effect.isPercentage)
                     {

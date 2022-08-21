@@ -17,8 +17,10 @@ public class StatsView : MonoBehaviour
     
     void Awake()
     {
-        if(Instance)
-            return;
+        if (Instance)
+        {
+            Destroy(this);
+        }
         else
         {
             Instance = this;

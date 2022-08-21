@@ -11,8 +11,10 @@ public class TurnController : MonoBehaviour
     
     void Awake()
     {
-        if(Instance)
-            return;
+        if (Instance)
+        {
+            Destroy(this);
+        }
         else
         {
             Instance = this;
@@ -22,6 +24,7 @@ public class TurnController : MonoBehaviour
     public void NewYear()
     {
         // calculate new money, food, population, etc.
+        StatsController.Instance.NewYearCalculations();
         
         // indicate changes to the player on UI
         StatsController.Instance.UpdateAllViews();
