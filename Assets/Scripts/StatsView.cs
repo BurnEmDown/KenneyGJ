@@ -11,6 +11,7 @@ public class StatsView : MonoBehaviour
     public Text freeLandText;
     public Text farmsText;
     public Text moneyText;
+    public Text happinessText;
     public Text unemploymentText;
     public GameObject environmentBar;
     
@@ -24,7 +25,7 @@ public class StatsView : MonoBehaviour
         }
     }
 
-    public void UpdateAllStats(int pop, double popGrowth, int food, int freeLand, int farms, int money, double unemployment, int environment)
+    public void UpdateAllStats(int pop, double popGrowth, int food, int freeLand, int farms, int money, int happiness, double unemployment, int environment)
     {
         UpdatePop(pop);
         UpdatePopGrowth(popGrowth);
@@ -32,6 +33,7 @@ public class StatsView : MonoBehaviour
         UpdateFreeLand(freeLand);
         UpdateFarms(farms);
         UpdateMoney(money);
+        UpdateHappiness(happiness);
         UpdateUnemployment(unemployment);
         UpdateEnvironment(environment);
     }
@@ -64,6 +66,11 @@ public class StatsView : MonoBehaviour
     public void UpdateMoney(int money)
     {
         moneyText.text = money.ToString() + "T$";
+    }
+    
+    public void UpdateHappiness(int happiness)
+    {
+        happinessText.text = happiness.ToString() + "%";
     }
 
     public void UpdateUnemployment(double unemployment)

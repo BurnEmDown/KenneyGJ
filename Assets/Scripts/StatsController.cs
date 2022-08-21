@@ -13,6 +13,7 @@ public class StatsController : MonoBehaviour
     private int farms;
     private int freeLand;
     private int money;
+    private int happiness; //percentage 0-100
     private double unemployment; //percentage 0-100
     private float creativePotential; // 0.5 - 1.5
     private int environment; // 1 - 5
@@ -78,6 +79,16 @@ public class StatsController : MonoBehaviour
                 money = value;
         }
     }
+    
+    public int Happiness
+    {
+        get => happiness;
+        private set
+        {
+            if (value is >= 0 and <= 100)
+                happiness = value;
+        }
+    }
 
     public double Unemployment
     {
@@ -111,8 +122,8 @@ public class StatsController : MonoBehaviour
 
     public void GrowPop()
     {
-        int newPop = (int)((long)population * PopulationGrowth);
-        population += newPop;
+        int newPop = (int)((long)Population * PopulationGrowth);
+        Population += newPop;
     }
 
     public void AddPopByAmount(int amount)
@@ -123,7 +134,7 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        population += amount;
+        Population += amount;
     }
 
     public void SubtractPopByAmount(int amount)
@@ -134,20 +145,20 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        if (amount > population)
+        if (amount > Population)
         {
             // population will be 0, game over?
-            amount = population;
+            amount = Population;
         }
-        population -= amount;
+        Population -= amount;
     }
 
     public void ChangePopByPercentage(int percentage)
     {
         float realPercentage = GetPercentageFromInt(percentage);
 
-        int newPop = (int)(population * realPercentage);
-        population = newPop;
+        int newPop = (int)(Population * realPercentage);
+        Population = newPop;
     }
 
     public void ChangePopGrowthByAmount(int amount)
@@ -173,7 +184,7 @@ public class StatsController : MonoBehaviour
         }
             
 
-        food += newFood;
+        Food += newFood;
     }
 
     public void SubtractFood(int foodTaken)
@@ -184,12 +195,17 @@ public class StatsController : MonoBehaviour
             return;
         }
         
-        if (foodTaken > food)
+        if (foodTaken > Food)
         {
             // too much food was taken, need to hurt player
-            foodTaken = food;
+            foodTaken = Food;
         }
-        food -= foodTaken;
+        Food -= foodTaken;
+    }
+
+    public void GrowFoodFromFarms()
+    {
+        Food += Farms * 100;
     }
 
     public void AddFreeLandByAmount(int amount)
@@ -200,7 +216,7 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        freeLand += amount;
+        FreeLand += amount;
     }
 
     public void SubtractFreeLandByAmount(int amount)
@@ -211,15 +227,23 @@ public class StatsController : MonoBehaviour
             return;
         }
         
-        if (amount > freeLand)
+        if (amount > FreeLand)
         {
             // too much free land was taken, need to hurt player
-            amount = freeLand;
+            amount = FreeLand;
         }
-        freeLand -= amount;
+        FreeLand -= amount;
     }
 
     public void ChangeFreeLandByPercentage(int percentage)
+    {
+        float realPercentage = GetPercentageFromInt(percentage);
+
+        int newFreeLand = (int)(FreeLand * realPercentage);
+        FreeLand = newFreeLand;
+    }
+    
+    public void ChangeFarmsByPercentage(int percentage)
     {
         float realPercentage = GetPercentageFromInt(percentage);
 
@@ -235,7 +259,7 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        farms += amount;
+        Farms += amount;
     }
 
     public void SubtractFarmsByAmount(int amount)
@@ -246,20 +270,12 @@ public class StatsController : MonoBehaviour
             return;
         }
         
-        if (amount > farms)
+        if (amount > Farms)
         {
             // too much farms was taken, need to hurt player
-            amount = farms;
+            amount = Farms;
         }
-        farms -= amount;
-    }
-
-    public void ChangeFarmsByPercentage(int percentage)
-    {
-        float realPercentage = GetPercentageFromInt(percentage);
-
-        int newFreeLand = (int)(FreeLand * realPercentage);
-        FreeLand = newFreeLand;
+        Farms -= amount;
     }
 
     public void AddMoneyByAmount(int amount)
@@ -280,10 +296,10 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        if (amount > money)
+        if (amount > Money)
         {
             // too much money was taken, need to hurt player
-            amount = money;
+            amount = Money;
         }
         Money -= amount;
     }
@@ -291,10 +307,37 @@ public class StatsController : MonoBehaviour
     public void ChangeMoneyByPercentage(float percentage)
     {
         if (percentage < 0)
+        {
+            Debug.LogError("tried to change with negative percentage");
             return;
-        
+        }
+
         int newMoney = (int)(Money * percentage);
         Money = newMoney;
+    }
+
+    public void AddMoneyFromPopulation()
+    {
+        double employment = 100 - Unemployment;
+        Money += (int) (Population * employment / 100);
+    }
+
+    public void AddHappinessByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to add negative happiness");
+            return;
+        }
+
+        if (amount + Happiness > 100)
+        {
+            Happiness = 100;
+            return;
+        }
+
+
+        Happiness += amount;
     }
 
     public void AddUnemploymentByAmount(int amount)
@@ -305,14 +348,14 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        if (unemployment + amount > 100)
+        if (Unemployment + amount > 100)
         {
-            unemployment = 100;
+            Unemployment = 100;
             return;
         }
         else
         {
-            unemployment += amount;
+            Unemployment += amount;
         }
 
     }
@@ -325,14 +368,14 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        if (unemployment - amount < 0)
+        if (Unemployment - amount < 0)
         {
-            unemployment = 0;
+            Unemployment = 0;
             return;
         }
         else
         {
-            unemployment -= amount;
+            Unemployment -= amount;
         }
 
     }
@@ -342,20 +385,20 @@ public class StatsController : MonoBehaviour
         if (percentage < 0)
             return;
         
-        int newUnemployment = (int)(unemployment * percentage);
-        unemployment = newUnemployment;
+        int newUnemployment = (int)(Unemployment * percentage);
+        Unemployment = newUnemployment;
     }
 
     public void IncreaseEnvironment()
     {
-        if (environment < 5)
-            environment++;
+        if (Environment < 5)
+            Environment++;
     }
     
     public void DecreaseEnvironment()
     {
-        if (environment > 1)
-            environment--;
+        if (Environment > 1)
+            Environment--;
     }
     
     #endregion
@@ -372,7 +415,7 @@ public class StatsController : MonoBehaviour
 
     public void UpdateAllViews()
     {
-        StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, farms, Money, Unemployment,
+        StatsView.Instance.UpdateAllStats(Population, PopulationGrowth, Food, FreeLand, Farms, Money, Happiness, Unemployment,
             Environment);
     }
 
