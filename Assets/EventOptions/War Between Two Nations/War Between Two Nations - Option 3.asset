@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
   m_Name: War Between Two Nations - Option 3
   m_EditorClassIdentifier: 
-  optionText: 
-  effects: []
+  optionText: Interfere on the side of the stronger nation
+  effects:
+  - {fileID: 11400000, guid: 7f57e361e9896fd4b92ff0541d5e4a81, type: 2}
+  - {fileID: 11400000, guid: c425e7f2e823b0142aea0fe2c3ecce2a, type: 2}
+  - {fileID: 11400000, guid: 5b0ac04c950e3cc4cbc9a8f7c633d71b, type: 2}
   assignedButton: {fileID: 0}

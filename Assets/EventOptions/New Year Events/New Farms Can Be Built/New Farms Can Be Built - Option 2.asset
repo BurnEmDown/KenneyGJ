@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
-  m_Name: War Between Two Nations - Option 1
+  m_Name: New Farms Can Be Built - Option 2
   m_EditorClassIdentifier: 
-  optionText: Do nothing, we might make things worse
+  optionText: Build a minimal amount of farms
   effects:
-  - {fileID: 11400000, guid: cf100063ee820184a80be7b39b904a9b, type: 2}
-  - {fileID: 11400000, guid: 61b3fe57fb9323d4f898261670729cbc, type: 2}
-  - {fileID: 11400000, guid: 9cfbf802ecb156d43ba25eb0d678519e, type: 2}
-  - {fileID: 11400000, guid: ccd948d6a9166df46b19b4dbd3eea36a, type: 2}
+  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: f490a6dfd10fac94cb05dcdfd09b2b77, type: 2}
+  - {fileID: 11400000, guid: 7c5dcf336be1d344ca826a4d8a03addc, type: 2}
   assignedButton: {fileID: 0}
