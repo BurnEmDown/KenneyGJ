@@ -7,13 +7,13 @@ public class StatsView : MonoBehaviour
     public static StatsView Instance;
 
     public Slider environmentBar;
-    public TMP_Text unemploymentText;
-    public TMP_Text happinessText;
-    public TMP_Text moneyText;
-    public TMP_Text farmsText;
-    public TMP_Text freeLandText;
-    public TMP_Text foodText;
     public TMP_Text popGrowthText;
+    public TMP_Text foodText;
+    public TMP_Text freeLandText;
+    public TMP_Text farmsText;
+    public TMP_Text moneyText;
+    public TMP_Text happinessText;
+    public TMP_Text unemploymentText;
     public TMP_Text popText;
     
     void Awake()
