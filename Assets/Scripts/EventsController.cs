@@ -46,7 +46,7 @@ public class EventsController : MonoBehaviour
                 switch (effect.statAffected)
                 {
                     case Stats.Money:
-                        if (!effect.isPercentage && StatsController.Instance.Money + effect.amount < 0)
+                        if (!effect.isPercentage && StatsController.Instance.Money + effect.intAmount < 0)
                         {
                             // disable option
                             option.DisableOption();
@@ -54,21 +54,21 @@ public class EventsController : MonoBehaviour
                         break;
                     
                     case Stats.FreeLand:
-                        if (!effect.isPercentage && StatsController.Instance.FreeLand + effect.amount < 0)
+                        if (!effect.isPercentage && StatsController.Instance.FreeLand + effect.intAmount < 0)
                         {
                             // disable option
                             option.DisableOption();
                         }
                         break;
                     case Stats.Food:
-                        if (!effect.isPercentage && StatsController.Instance.Food + effect.amount < 0)
+                        if (!effect.isPercentage && StatsController.Instance.Food + effect.intAmount < 0)
                         {
                             // disable option
                             option.DisableOption();
                         }
                         break;
                     case Stats.Farms:
-                        if (!effect.isPercentage && StatsController.Instance.Farms + effect.amount < 0)
+                        if (!effect.isPercentage && StatsController.Instance.Farms + effect.intAmount < 0)
                         {
                             // disable option
                             option.DisableOption();

@@ -133,11 +133,7 @@ public class StatsController : MonoBehaviour
 
     public void SubtractPopByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative pop");
-            return;
-        }
+        amount = Math.Abs(amount);
 
         if (amount > Population)
         {
@@ -155,18 +151,9 @@ public class StatsController : MonoBehaviour
         Population = newPop;
     }
 
-    public void ChangePopGrowthByAmount(int amount)
+    public void ChangePopGrowthByAmount(float amount)
     {
-        float realAmount = GetPercentageFromInt(amount);
-        
-        PopulationGrowth += realAmount;
-    }
-
-    public void ChangePopGrowthByPercentage(int percentage)
-    {
-        float realPercentage = GetPercentageFromInt(percentage);
-        
-        PopulationGrowth *= realPercentage;
+        PopulationGrowth += amount;
     }
 
     public void AddFood(int newFood)
@@ -183,12 +170,8 @@ public class StatsController : MonoBehaviour
 
     public void SubtractFood(int foodTaken)
     {
-        if (foodTaken < 0)
-        {
-            Debug.LogError("tried to subtract negative food");
-            return;
-        }
-        
+        foodTaken = Math.Abs(foodTaken);
+
         if (foodTaken > Food)
         {
             // too much food was taken, need to hurt player
@@ -210,12 +193,8 @@ public class StatsController : MonoBehaviour
 
     public void SubtractFreeLandByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative free land");
-            return;
-        }
-        
+        amount = Math.Abs(amount);
+
         if (amount > FreeLand)
         {
             // too much free land was taken, need to hurt player
@@ -253,12 +232,8 @@ public class StatsController : MonoBehaviour
 
     public void SubtractFarmsByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative farms");
-            return;
-        }
-        
+        amount = Math.Abs(amount);
+
         if (amount > Farms)
         {
             // too much farms was taken, need to hurt player
@@ -279,11 +254,7 @@ public class StatsController : MonoBehaviour
     
     public void SubtractMoneyByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative money");
-            return;
-        }
+        amount = Math.Abs(amount);
 
         if (amount > Money)
         {
@@ -325,11 +296,7 @@ public class StatsController : MonoBehaviour
     
     public void SubtractHappinessByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative happiness");
-            return;
-        }
+        amount = Math.Abs(amount);
 
         if (Happiness - amount < 0)
         {
@@ -363,11 +330,7 @@ public class StatsController : MonoBehaviour
     
     public void SubtractUnemploymentByAmount(int amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative unemployment");
-            return;
-        }
+        amount = Math.Abs(amount);
 
         if (Unemployment - amount < 0)
         {
@@ -390,7 +353,7 @@ public class StatsController : MonoBehaviour
         Unemployment = newUnemployment;
     }
 
-    public void IncreaseCreativePotentialByAmount(int amount)
+    public void IncreaseCreativePotentialByAmount(float amount)
     {
         if (amount < 0)
         {
@@ -398,24 +361,16 @@ public class StatsController : MonoBehaviour
             return;
         }
 
-        float percentage = GetPercentageFromInt(amount);
-        
-        creativePotential += percentage;
+        creativePotential += amount;
         if (creativePotential > 1.5f)
             creativePotential = 1.5f;
     }
     
-    public void DecreaseCreativePotentialByAmount(int amount)
+    public void DecreaseCreativePotentialByAmount(float amount)
     {
-        if (amount < 0)
-        {
-            Debug.LogError("tried to subtract negative creative potential");
-            return;
-        }
-        
-        float percentage = GetPercentageFromInt(amount);
+        amount = Math.Abs(amount);
 
-        creativePotential -= percentage;
+        creativePotential -= amount;
         if (creativePotential < 0.5f)
             creativePotential = 0.5f;
     }

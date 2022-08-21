@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
+  m_Name: Meteor Strike - Do Nothing
+  m_EditorClassIdentifier: 
+  optionText: "We can\u2019t afford to do anything"
+  effects:
+  - {fileID: 11400000, guid: 4719da4c1239e234196f764c1d388884, type: 2}
+  - {fileID: 11400000, guid: 4b94ba1f3e5c3ee40ac52d09d0e07c81, type: 2}
+  - {fileID: 11400000, guid: 9c958cd64a05035419fa5f4db1ba4478, type: 2}
+  - {fileID: 11400000, guid: 8a8c5ccc531e2f74487ce6f09c1e9b9c, type: 2}
+  - {fileID: 11400000, guid: cc622a60bc42f504a8fa4e0565040718, type: 2}
+  assignedButton: {fileID: 0}

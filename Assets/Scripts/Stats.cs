@@ -8,5 +8,6 @@
         Money,
         Happiness,
         Unemployment,
+        CreativePotential,
         Environment
 }
