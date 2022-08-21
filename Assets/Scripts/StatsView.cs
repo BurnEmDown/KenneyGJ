@@ -15,6 +15,7 @@ public class StatsView : MonoBehaviour
     public TMP_Text happinessText;
     public TMP_Text unemploymentText;
     public TMP_Text popText;
+    public GameObject statsInfo;
     
     void Awake()
     {
@@ -84,5 +85,11 @@ public class StatsView : MonoBehaviour
     public void UpdateEnvironment(int environment)
     {
         environmentBar.value = environment;
+    }
+
+    public void InfoButtonClicked()
+    {
+        bool activate = !statsInfo.activeInHierarchy;
+        statsInfo.SetActive(activate);
     }
 }

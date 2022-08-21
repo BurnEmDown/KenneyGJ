@@ -443,6 +443,8 @@ public class StatsController : MonoBehaviour
         else
         {
             Instance = this;
+            SetInitialStats();
+            UpdateAllViews();
         }
     }
 

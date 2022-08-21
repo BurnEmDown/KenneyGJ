@@ -11,9 +11,9 @@ public class BackgroundController : MonoBehaviour
 
     void Awake()
     {
-        Ocean.color = OceanGood;
-        Land.color = LandGood;
-        Atmosphere.color = AtmosphereGood;
+        //Ocean.color = OceanGood;
+        //and.color = LandGood;
+        //Atmosphere.color = AtmosphereGood;
     }
 
     public void SetOceanColor(float val)
