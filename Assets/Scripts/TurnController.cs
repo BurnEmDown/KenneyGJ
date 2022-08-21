@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,20 @@ public class TurnController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        year = 2250;
+        quarter = 1;
+        TurnView.Instance.UpdateDate(quarter, year);
+        FirstYear();
+    }
+
+    public void FirstYear()
+    {
+        // show the new year event, then show the event of the first quarter of the year
+        EventsController.Instance.ShowNewYearEvent(NextQuarter);
+    }
+
     public void NewYear()
     {
         // calculate new money, food, population, etc.
@@ -39,7 +54,7 @@ public class TurnController : MonoBehaviour
         EventsController.Instance.ShowNewEvent(() =>
         {
             quarter++;
-            if (quarter == 4)
+            if (quarter == 5)
             {
                 quarter = 1;
                 year++;
@@ -51,7 +66,6 @@ public class TurnController : MonoBehaviour
                 TurnView.Instance.UpdateDate(quarter);
                 NextQuarter();
             }
-            
         });
     }
 }

@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TurnView : MonoBehaviour
 {
     public static TurnView Instance;
 
-    public Text yearText;
-    public Text quarterText;
+    public TMP_Text yearText;
+    public TMP_Text quarterText;
     
     void Awake()
     {

@@ -24,7 +24,7 @@ public class EventsController : MonoBehaviour
 
     private void OnEnable()
     {
-        ShowNewEvent(null);
+        
     }
 
     public void OnGUI()
@@ -37,17 +37,18 @@ public class EventsController : MonoBehaviour
         int eventNum = Random.Range(0, quarterEventsList.Count-1);
 
         Event quarterEvent = quarterEventsList[eventNum];
-        EventsView.Instance.ShowEvent(quarterEvent);
+        quarterEventsList.RemoveAt(eventNum);
+        EventsView.Instance.ShowEvent(quarterEvent, onComplete);
         DisableInvalidEventOptions(quarterEvent);
-        
-        //onComplete?.Invoke();
     }
 
     public void ShowNewYearEvent(Action onComplete)
     {
+        int eventNum = Random.Range(0, newYearEventsList.Count-1);
         
-        
-        onComplete?.Invoke();
+        Event yearlyEvent = quarterEventsList[eventNum];
+        EventsView.Instance.ShowEvent(yearlyEvent, onComplete);
+        DisableInvalidEventOptions(yearlyEvent);
     }
     
     private void DisableInvalidEventOptions(Event eventToCheck)
