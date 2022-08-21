@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
   m_Name: New Land Can be Prepared - Option 4
   m_EditorClassIdentifier: 
-  optionText: 
-  effects: []
+  optionText: Prepare a lot of land
+  effects:
+  - {fileID: 11400000, guid: d45d6055ef0f4214bae75914c96e0a17, type: 2}
+  - {fileID: 11400000, guid: dcc8d15bdda281f4094016106f6976cc, type: 2}
+  - {fileID: 11400000, guid: 3098efa5f1ae7af4abdb6721fa3c81bf, type: 2}
   assignedButton: {fileID: 0}
