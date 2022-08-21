@@ -146,6 +146,8 @@ public class EventOption : ScriptableObject
                     break;
             }
         }
+
+        StatsController.Instance.UpdateAllViews();
     }
 
     public void DisableOption()

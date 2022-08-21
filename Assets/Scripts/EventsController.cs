@@ -22,9 +22,14 @@ public class EventsController : MonoBehaviour
         }
     }
 
-    public void OnGUI()
+    private void OnEnable()
     {
         ShowNewEvent(null);
+    }
+
+    public void OnGUI()
+    {
+        
     }
 
     public void ShowNewEvent(Action onComplete)
@@ -35,7 +40,7 @@ public class EventsController : MonoBehaviour
         EventsView.Instance.ShowEvent(quarterEvent);
         DisableInvalidEventOptions(quarterEvent);
         
-        onComplete?.Invoke();
+        //onComplete?.Invoke();
     }
 
     public void ShowNewYearEvent(Action onComplete)

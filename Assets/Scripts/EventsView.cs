@@ -95,39 +95,59 @@ public class EventsView : MonoBehaviour
                 eventOptionA.gameObject.SetActive(true);
                 eventOptionAText.gameObject.SetActive(true);
                 eventToShow.eventOptions[0].assignedButton = eventOptionA;
+                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
                 break;
             case 2:
                 eventOptionA.gameObject.SetActive(true);
                 eventOptionAText.gameObject.SetActive(true);
                 eventToShow.eventOptions[0].assignedButton = eventOptionA;
+                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
                 eventOptionB.gameObject.SetActive(true);
                 eventOptionBText.gameObject.SetActive(true);
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
+                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
                 break;
             case 3:
                 eventOptionA.gameObject.SetActive(true);
                 eventOptionAText.gameObject.SetActive(true);
                 eventToShow.eventOptions[0].assignedButton = eventOptionA;
+                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
                 eventOptionB.gameObject.SetActive(true);
                 eventOptionBText.gameObject.SetActive(true);
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
+                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
                 eventOptionC.gameObject.SetActive(true);
                 eventOptionCText.gameObject.SetActive(true);
                 eventToShow.eventOptions[2].assignedButton = eventOptionC;
+                eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
                 break;
             case 4:
                 eventOptionA.gameObject.SetActive(true);
                 eventOptionAText.gameObject.SetActive(true);
                 eventToShow.eventOptions[0].assignedButton = eventOptionA;
+                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
                 eventOptionB.gameObject.SetActive(true);
                 eventOptionBText.gameObject.SetActive(true);
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
+                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
                 eventOptionC.gameObject.SetActive(true);
                 eventOptionCText.gameObject.SetActive(true);
                 eventToShow.eventOptions[2].assignedButton = eventOptionC;
+                eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
                 eventOptionD.gameObject.SetActive(true);
                 eventOptionDText.gameObject.SetActive(true);
                 eventToShow.eventOptions[3].assignedButton = eventOptionD;
+                eventToShow.eventOptions[3].assignedButton.onClick.RemoveAllListeners();
+                eventToShow.eventOptions[3].assignedButton.onClick.AddListener(eventToShow.eventOptions[3].ActivateEffects);
                 break;
         }
     }
