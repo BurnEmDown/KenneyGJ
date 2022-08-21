@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: New Land Can Be Prepared
+  m_EditorClassIdentifier: 
+  eventName: New Land Can be Prepared
+  eventText: We can prepare previously uninhabited land to be available for farming
+    or urban areas next year, how much land should be prepared?
+  eventOptions:
+  - {fileID: 11400000, guid: ca1466bf90c5dd64b9c62e8f9f3c75d7, type: 2}
+  - {fileID: 11400000, guid: ddddfb3f8e5ddb24bb904d2b4292872e, type: 2}
+  - {fileID: 11400000, guid: f9b925557635ad64a9a6620977937a22, type: 2}
+  - {fileID: 11400000, guid: 85950ee38144d1f41a8f0832c7c0d28a, type: 2}

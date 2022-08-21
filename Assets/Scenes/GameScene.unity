@@ -351,7 +351,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ed0198e02444bbb489f21cabda0fe4a4, type: 2}
   - {fileID: 11400000, guid: 217ae4fa4def1c84cae8ff15ad05c7c3, type: 2}
   - {fileID: 11400000, guid: 98e831b9143a1c94b8cf7fce92644fa6, type: 2}
-  newYearEventsList: []
+  newYearEventsList:
+  - {fileID: 11400000, guid: 476bb06884445df4a84e4c17b1a03bea, type: 2}
+  - {fileID: 11400000, guid: 9a136c456ca2f264794d66ac2a0ef5d0, type: 2}
+  - {fileID: 11400000, guid: 6859722f04122324483b7df310134b55, type: 2}
 --- !u!114 &247037301
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: New Farms Can Be Built
+  m_EditorClassIdentifier: 
+  eventName: New Farms Can Be Built
+  eventText: How many farms should we build for this year?
+  eventOptions:
+  - {fileID: 11400000, guid: ca1466bf90c5dd64b9c62e8f9f3c75d7, type: 2}
+  - {fileID: 11400000, guid: 3d3b9b23610ae22479a5e8f32f300c59, type: 2}
+  - {fileID: 11400000, guid: d2205e8f2211c9b44866a90860c6d2bb, type: 2}
+  - {fileID: 11400000, guid: 559ea02bc0c4e994abdc7b851cc7c596, type: 2}
