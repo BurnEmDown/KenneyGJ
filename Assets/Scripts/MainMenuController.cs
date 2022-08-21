@@ -5,6 +5,7 @@ public class MainMenuController : MonoBehaviour
     public static MainMenuController Instance;
 
     public GameObject storyBox;
+    public GameObject explanationBox;
     
     void Awake()
     {
@@ -27,6 +28,19 @@ public class MainMenuController : MonoBehaviour
     {
         bool activate = !storyBox.activeInHierarchy;
         storyBox.SetActive(activate);
+        explanationBox.SetActive(false);
+    }
+
+    public void ExplanationButton()
+    {
+        bool activate = !explanationBox.activeInHierarchy;
+        explanationBox.SetActive(activate);
+        storyBox.SetActive(false);
+    }
+
+    public void OptionsButton()
+    {
+        
     }
 
     public void ExitButton()

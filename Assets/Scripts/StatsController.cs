@@ -120,12 +120,6 @@ public class StatsController : MonoBehaviour
 
     #region StatsChangers
 
-    public void GrowPop()
-    {
-        int newPop = (int)((long)Population * PopulationGrowth);
-        Population += newPop;
-    }
-
     public void AddPopByAmount(int amount)
     {
         if (amount < 0)
@@ -201,11 +195,6 @@ public class StatsController : MonoBehaviour
             foodTaken = Food;
         }
         Food -= foodTaken;
-    }
-
-    public void GrowFoodFromFarms()
-    {
-        Food += Farms * 100;
     }
 
     public void AddFreeLandByAmount(int amount)
@@ -314,12 +303,6 @@ public class StatsController : MonoBehaviour
 
         int newMoney = (int)(Money * percentage);
         Money = newMoney;
-    }
-
-    public void CollectMoneyFromPopulation()
-    {
-        double employment = 100 - Unemployment;
-        Money += (int) (Population * creativePotential * employment / 100);
     }
 
     public void AddHappinessByAmount(int amount)
@@ -478,6 +461,7 @@ public class StatsController : MonoBehaviour
     
     public void NewYearCalculations()
     {
+        PopsEatFood();
         GrowFoodFromFarms();
         CollectMoneyFromPopulation();
         GrowPop();
@@ -485,15 +469,37 @@ public class StatsController : MonoBehaviour
 
     public void SetInitialStats()
     {
-        Population = 100;
+        Population = 1000;
         PopulationGrowth = 1.5;
-        Food = 100;
-        Farms = 100;
-        FreeLand = 100;
-        Money = 100;
+        Food = 1000;
+        Farms = 10;
+        FreeLand = 10;
+        Money = 1000;
         Happiness = 80;
         Unemployment = 10;
         creativePotential = 1.0f;
         environment = 1;
+    }
+    
+    public void PopsEatFood()
+    {
+        SubtractFood(Population);
+    }
+
+    public void GrowFoodFromFarms()
+    {
+        Food += Farms * 100;
+    }
+
+    public void CollectMoneyFromPopulation()
+    {
+        double employment = 100 - Unemployment;
+        Money += (int) (Population * creativePotential * employment / 100);
+    }
+    
+    public void GrowPop()
+    {
+        int newPop = (int)((long)Population * PopulationGrowth);
+        Population += newPop;
     }
 }
