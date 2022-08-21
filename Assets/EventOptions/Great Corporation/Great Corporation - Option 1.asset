@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionText: Seize his assets for the good of mankind
   effects:
-  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: 25198df7e07aedd45ab6c417b07469be, type: 2}
   - {fileID: 11400000, guid: 0399d414dcc8f44458ccfcd241ca8665, type: 2}
   - {fileID: 11400000, guid: e2ce7230bc2cf574897db44ac2148f1f, type: 2}
   assignedButton: {fileID: 0}

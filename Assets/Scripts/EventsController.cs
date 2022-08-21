@@ -39,6 +39,7 @@ public class EventsController : MonoBehaviour
         Event quarterEvent = quarterEventsList[eventNum];
         quarterEventsList.RemoveAt(eventNum);
         EventsView.Instance.ShowEvent(quarterEvent, onComplete);
+        quarterEvent.EnableAllOptions();
         DisableInvalidEventOptions(quarterEvent);
     }
 
@@ -46,8 +47,9 @@ public class EventsController : MonoBehaviour
     {
         int eventNum = Random.Range(0, newYearEventsList.Count-1);
         
-        Event yearlyEvent = quarterEventsList[eventNum];
+        Event yearlyEvent = newYearEventsList[eventNum];
         EventsView.Instance.ShowEvent(yearlyEvent, onComplete);
+        yearlyEvent.EnableAllOptions();
         DisableInvalidEventOptions(yearlyEvent);
     }
     

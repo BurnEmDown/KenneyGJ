@@ -114,7 +114,7 @@ public class EventsView : MonoBehaviour
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
                 eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
                 break;
             case 3:
                 eventOptionA.gameObject.SetActive(true);
@@ -128,13 +128,13 @@ public class EventsView : MonoBehaviour
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
                 eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
                 eventOptionC.gameObject.SetActive(true);
                 eventOptionCText.gameObject.SetActive(true);
                 eventToShow.eventOptions[2].assignedButton = eventOptionC;
                 eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(OnEventComplete);
                 break;
             case 4:
                 eventOptionA.gameObject.SetActive(true);
@@ -148,31 +148,31 @@ public class EventsView : MonoBehaviour
                 eventToShow.eventOptions[1].assignedButton = eventOptionB;
                 eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
                 eventOptionC.gameObject.SetActive(true);
                 eventOptionCText.gameObject.SetActive(true);
                 eventToShow.eventOptions[2].assignedButton = eventOptionC;
                 eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(OnEventComplete);
                 eventOptionD.gameObject.SetActive(true);
                 eventOptionDText.gameObject.SetActive(true);
                 eventToShow.eventOptions[3].assignedButton = eventOptionD;
                 eventToShow.eventOptions[3].assignedButton.onClick.RemoveAllListeners();
                 eventToShow.eventOptions[3].assignedButton.onClick.AddListener(eventToShow.eventOptions[3].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+                eventToShow.eventOptions[3].assignedButton.onClick.AddListener(OnEventComplete);
                 break;
         }
     }
 
-    public void ShowEvent(Event quarterEvent, Action onComplete)
+    public void ShowEvent(Event eventToShow, Action onComplete)
     {
         onEventCompleteAction = onComplete;
         HideAllEventUI();
         ShowEventBoxAndText();
-        UpdateEventTextBox(quarterEvent);
-        ShowEventOptions(quarterEvent);
-        UpdateEventOptions(quarterEvent);
+        UpdateEventTextBox(eventToShow);
+        ShowEventOptions(eventToShow);
+        UpdateEventOptions(eventToShow);
     }
 
     public void OnEventComplete()
