@@ -319,7 +319,7 @@ public class StatsController : MonoBehaviour
     public void CollectMoneyFromPopulation()
     {
         double employment = 100 - Unemployment;
-        Money += (int) (Population * employment / 100);
+        Money += (int) (Population * creativePotential * employment / 100);
     }
 
     public void AddHappinessByAmount(int amount)
@@ -407,6 +407,36 @@ public class StatsController : MonoBehaviour
         Unemployment = newUnemployment;
     }
 
+    public void IncreaseCreativePotentialByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to add negative creative potential");
+            return;
+        }
+
+        float percentage = GetPercentageFromInt(amount);
+        
+        creativePotential += percentage;
+        if (creativePotential > 1.5f)
+            creativePotential = 1.5f;
+    }
+    
+    public void DecreaseCreativePotentialByAmount(int amount)
+    {
+        if (amount < 0)
+        {
+            Debug.LogError("tried to subtract negative creative potential");
+            return;
+        }
+        
+        float percentage = GetPercentageFromInt(amount);
+
+        creativePotential -= percentage;
+        if (creativePotential < 0.5f)
+            creativePotential = 0.5f;
+    }
+
     public void IncreaseEnvironment()
     {
         if (Environment < 5)
@@ -451,5 +481,19 @@ public class StatsController : MonoBehaviour
         GrowFoodFromFarms();
         CollectMoneyFromPopulation();
         GrowPop();
+    }
+
+    public void SetInitialStats()
+    {
+        Population = 100;
+        PopulationGrowth = 1.5;
+        Food = 100;
+        Farms = 100;
+        FreeLand = 100;
+        Money = 100;
+        Happiness = 80;
+        Unemployment = 10;
+        creativePotential = 1.0f;
+        environment = 1;
     }
 }
