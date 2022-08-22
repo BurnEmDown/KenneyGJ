@@ -9,6 +9,11 @@ public class TurnController : MonoBehaviour
 
     private int year;
     private int quarter;
+
+    private const int START_YEAR = 2250;
+    private const int START_QUARTER = 1;
+
+    private const int END_YEAR = 2260;
     
     void Awake()
     {
@@ -24,8 +29,8 @@ public class TurnController : MonoBehaviour
 
     private void OnEnable()
     {
-        year = 2250;
-        quarter = 1;
+        year = START_YEAR;
+        quarter = START_QUARTER;
         TurnView.Instance.UpdateDate(quarter, year);
         FirstYear();
     }
@@ -59,6 +64,11 @@ public class TurnController : MonoBehaviour
                 quarter = 1;
                 year++;
                 TurnView.Instance.UpdateDate(quarter, year);
+
+                if (year == END_YEAR)
+                {
+                    // victory
+                }
                 NewYear();
             }
             else
