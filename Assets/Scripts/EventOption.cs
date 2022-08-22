@@ -127,11 +127,11 @@ public class EventOption : ScriptableObject
                     {
                         if (effect.intAmount <= 0)
                         {
-                            StatsController.Instance.SubtractUnemploymentByAmount(effect.intAmount);
+                            StatsController.Instance.SubtractUnemploymentByAmount(effect.floatAmount);
                         }
                         else
                         {
-                            StatsController.Instance.AddUnemploymentByAmount(effect.intAmount);
+                            StatsController.Instance.AddUnemploymentByAmount(effect.floatAmount);
                         }
                     }
                     break;

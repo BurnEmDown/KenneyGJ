@@ -352,7 +352,7 @@ public class StatsController : MonoBehaviour
         Happiness -= amount;
     }
 
-    public void AddUnemploymentByAmount(int amount)
+    public void AddUnemploymentByAmount(float amount)
     {
         if (amount < 0)
         {
@@ -372,7 +372,7 @@ public class StatsController : MonoBehaviour
 
     }
     
-    public void SubtractUnemploymentByAmount(int amount)
+    public void SubtractUnemploymentByAmount(float amount)
     {
         amount = Math.Abs(amount);
 
@@ -533,7 +533,7 @@ public class StatsController : MonoBehaviour
         return Happiness + amount;
     }
 
-    public double TempChangeUnemploymentByAmount(int amount)
+    public double TempChangeUnemploymentByAmount(double amount)
     {
         if (amount + Unemployment > 100)
         {
@@ -615,7 +615,7 @@ public class StatsController : MonoBehaviour
     
     public void GrowPop()
     {
-        int newPop = (int)((long)Population * PopulationGrowth);
+        int newPop = (int)((long)Population * PopulationGrowth / 100);
         Population += newPop;
     }
 }

@@ -185,7 +185,7 @@ public class StatsView : MonoBehaviour
             case Stats.Unemployment:
                 color = num < 0 ? Color.green : Color.red;
                 unemploymentText.color = color;
-                unemploymentText.text = StatsController.Instance.TempChangeUnemploymentByAmount(num).ToString() + "%";
+                unemploymentText.text = StatsController.Instance.TempChangeUnemploymentByAmount(percentage).ToString() + "%";
                 break;
         }
     }
