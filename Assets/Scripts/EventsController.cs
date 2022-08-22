@@ -38,7 +38,6 @@ public class EventsController : MonoBehaviour
         int eventNum = Random.Range(0, quarterEventsList.Count-1);
 
         Event quarterEvent = quarterEventsList[eventNum];
-        quarterEventsList.RemoveAt(eventNum);
         EventsView.Instance.ShowEvent(quarterEvent, onComplete);
         quarterEvent.EnableAllOptions();
         DisableInvalidEventOptions(quarterEvent);

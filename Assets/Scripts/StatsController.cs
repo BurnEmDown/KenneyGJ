@@ -432,7 +432,6 @@ public class StatsController : MonoBehaviour
     }
     
     #endregion
-    
     void Awake()
     {
         if (Instance)
