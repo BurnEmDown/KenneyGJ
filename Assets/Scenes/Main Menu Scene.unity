@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -318,8 +318,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tutorial
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -566,10 +566,10 @@ RectTransform:
   m_Father: {fileID: 2144823874}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 195, y: 411.74}
-  m_SizeDelta: {x: 750, y: 216.26}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -376, y: -216.26}
+  m_SizeDelta: {x: 750, y: 216.26001}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &285383238
 MonoBehaviour:
@@ -945,8 +945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -363, y: 3}
-  m_SizeDelta: {x: 750, y: 211}
+  m_AnchoredPosition: {x: -376, y: 3}
+  m_SizeDelta: {x: 750, y: 248.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &862830232
 MonoBehaviour:
@@ -1322,8 +1322,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Story
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1459,8 +1459,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1570,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -363, y: 3}
+  m_AnchoredPosition: {x: -376, y: 3}
   m_SizeDelta: {x: 750, y: 257.56}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1366497141
@@ -1805,8 +1805,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2109,14 +2109,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'The year is 2250, you''ve been chosen to be acting ruler of Earth for
-    10 years. You must let your population grow - but not too much, you must feed
+    10 years. You need let your population grow - but not too much! You must feed
     them, keep them happy, and make sure the environment remains stable.
 
     Civilization
     and Earth are in your hands!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2140,8 +2140,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2225,8 +2225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.456909, y: -0.5138016}
-  m_SizeDelta: {x: 692.9138, y: 181.0277}
+  m_AnchoredPosition: {x: 2.5899963, y: -2.0699997}
+  m_SizeDelta: {x: 709.96, y: 224.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1904524135
 MonoBehaviour:
@@ -2251,13 +2251,14 @@ MonoBehaviour:
   m_text: 'Every Million people consume 1 food and create about 1 Trillion $ if they''re
     working, and each farm creates 100 food at the end of the year.
 
+
     Keep your
     pops happy (>50%) and fed (don''t reach 0), the environment stable (keep the
     bar not empty), and stay out of bankruptcy (money > 0) for 10 years to win the
     game.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
+  m_sharedMaterial: {fileID: -5654107095953253022, guid: fde29b481a347a84e813cd156fc662dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
