@@ -7,6 +7,21 @@ public class StatsController : MonoBehaviour
 {
     public static StatsController Instance;
 
+    private const int START_POP = 15000;
+    private const double START_POP_GROWTH = 2.0;
+    private const int START_FOOD = 15000;
+    private const int START_FARMS = 150;
+    private const int START_FREELAND = 100;
+    private const int START_MONEY = 15000;
+    private const int START_HAPPINESS = 80;
+    private const double START_UNEMPLOYMENT = 10.0;
+    private const float START_CREATIVE_POTENTIAL = 1.0f;
+    private const int START_ENVIRONMENT = 5;
+    
+    private const int END_POP = 500;
+    private const int END_HAPPINESS = 50;
+    private const int END_ENVIRONMENT = 1;
+
     private int population;
     private double populationGrowth;
     private int food;
@@ -27,9 +42,10 @@ public class StatsController : MonoBehaviour
         {
             if (value > 0)
                 population = value;
-            else
+
+            if (value < END_POP)
             {
-                // pop is zero, game over!!!
+                // game over
             }
         }
     }
@@ -87,6 +103,11 @@ public class StatsController : MonoBehaviour
         {
             if (value is >= 0 and <= 100)
                 happiness = value;
+
+            if (value < END_HAPPINESS)
+            {
+                // game over
+            }
         }
     }
 
@@ -113,6 +134,11 @@ public class StatsController : MonoBehaviour
         {
             if (value is >= 1 and <= 5)
                 environment = value;
+
+            if (value < END_ENVIRONMENT)
+            {
+                // game over
+            }
         }
     }
 
@@ -442,18 +468,18 @@ public class StatsController : MonoBehaviour
         GrowPop();
     }
 
-    public void SetInitialStats()
+    private void SetInitialStats()
     {
-        Population = 1000;
-        PopulationGrowth = 1.5;
-        Food = 1000;
-        Farms = 10;
-        FreeLand = 10;
-        Money = 1000;
-        Happiness = 80;
-        Unemployment = 10;
-        creativePotential = 1.0f;
-        environment = 1;
+        Population = START_POP;
+        PopulationGrowth = START_POP_GROWTH;
+        Food = START_FOOD;
+        Farms = START_FARMS;
+        FreeLand = START_FREELAND;
+        Money = START_MONEY;
+        Happiness = START_HAPPINESS;
+        Unemployment = START_UNEMPLOYMENT;
+        creativePotential = START_CREATIVE_POTENTIAL;
+        environment = START_ENVIRONMENT;
     }
     
     public void PopsEatFood()
