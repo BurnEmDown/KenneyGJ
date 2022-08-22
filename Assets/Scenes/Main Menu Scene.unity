@@ -2108,7 +2108,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'The year is 2250, you''ve been chosen to be acting ruler of Earth for
+    10 years. You must let your population grow - but not too much, you must feed
+    them, keep them happy, and make sure the environment remains stable.
+
+    Civilization
+    and Earth are in your hands!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2243,13 +2248,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Each person consumes 1 food, and creates 1 money if he''s employed
+  m_text: 'Every Million people consume 1 food and create about 1 Trillion $ if they''re
+    working, and each farm creates 100 food at the end of the year.
 
-    Each
-    farm creates 100 food
-
-    Keep your pops happy and fed, the environment stable,
-    and stay out of bankruptcy for 10 years to win the game'
+    Keep your
+    pops happy (>50%) and fed (don''t reach 0), the environment stable (keep the
+    bar not empty), and stay out of bankruptcy (money > 0) for 10 years to win the
+    game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
