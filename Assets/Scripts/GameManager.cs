@@ -25,12 +25,20 @@ public class GameManager : MonoBehaviour
 
     public void LoadGameScene()
     {
+        MusicController.Instance.PlayMusic();
         SceneManager.LoadScene("GameScene");
     }
 
     public void LoadGameOverScene()
     {
+        MusicController.Instance.StopPlayMusic();
         SceneManager.LoadScene("Game Over Scene");
+    }
+
+    public void LoadVictoryScene()
+    {
+        MusicController.Instance.StopPlayMusic();
+        SceneManager.LoadScene("Victory Scene");
     }
 
     public void ExitGame()

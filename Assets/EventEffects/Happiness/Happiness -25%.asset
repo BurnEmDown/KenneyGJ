@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5224ff8fa6954c228770d2a9c0cb8cc5, type: 3}
   m_Name: Happiness -25%
   m_EditorClassIdentifier: 
-  statAffected: 0
+  statAffected: 6
   intAmount: -25
   floatAmount: 0
   isPercentage: 0
