@@ -45,7 +45,7 @@ public class StatsController : MonoBehaviour
 
             if (value < END_POP)
             {
-                // game over
+                GameManager.Instance.LoadGameOverScene();
             }
         }
     }
@@ -106,7 +106,7 @@ public class StatsController : MonoBehaviour
 
             if (value < END_HAPPINESS)
             {
-                // game over
+                GameManager.Instance.LoadGameOverScene();
             }
         }
     }
@@ -137,7 +137,7 @@ public class StatsController : MonoBehaviour
 
             if (value < END_ENVIRONMENT)
             {
-                // game over
+                GameManager.Instance.LoadGameOverScene();
             }
         }
     }
