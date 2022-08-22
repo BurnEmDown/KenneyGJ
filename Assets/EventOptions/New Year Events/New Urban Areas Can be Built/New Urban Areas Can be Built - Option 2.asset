@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
   m_Name: New Urban Areas Can be Built - Option 2
   m_EditorClassIdentifier: 
-  optionText: 
-  effects: []
+  optionText: 'Build a minimal amount of urban areas '
+  effects:
+  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: 4d7193616c84a3e4a9ffbc61ececc622, type: 2}
+  - {fileID: 11400000, guid: 7c5dcf336be1d344ca826a4d8a03addc, type: 2}
   assignedButton: {fileID: 0}
