@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Aliens Among Us
+  m_EditorClassIdentifier: 
+  eventName: Aliens Among Us
+  eventText: What should be done about the increase in Alien immigration?
+  eventOptions:
+  - {fileID: 11400000, guid: 427760d2586e6cd48a822114fc9e5755, type: 2}
+  - {fileID: 11400000, guid: f6fdf421d8875284083466b9e61cffa5, type: 2}
+  - {fileID: 11400000, guid: df6f3e20bc729d848a1313d413bb0ec7, type: 2}

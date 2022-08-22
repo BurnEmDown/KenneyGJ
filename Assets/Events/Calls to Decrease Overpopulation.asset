@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Calls to Decrease Overpopulation
+  m_EditorClassIdentifier: 
+  eventName: Calls to Decrease Overpopulation
+  eventText: "In recent decades the earth\u2019s population continues to grow at
+    an ever-increasing rate. There are fears that we are nearing the end of the free
+    land available to us to build more farms and cities. How should we approach this
+    problem? "
+  eventOptions:
+  - {fileID: 11400000, guid: e29f828438f1e064685cde13ea73a78b, type: 2}
+  - {fileID: 11400000, guid: ad5971fa256b5b947ac184b2a514e257, type: 2}
+  - {fileID: 11400000, guid: ca0acaf39f3a8d941b2bf352f5bcf913, type: 2}
+  - {fileID: 11400000, guid: 3cc63088c99c4a64d932241d1789e467, type: 2}
