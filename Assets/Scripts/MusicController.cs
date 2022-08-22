@@ -18,6 +18,14 @@ public class MusicController : MonoBehaviour
             DontDestroyOnLoad(this);
         }
     }
-    
-    
+
+    public void PlayMusic()
+    {
+        musicSource.Play();
+    }
+
+    public void StopPlayMusic()
+    {
+        musicSource.Stop();
+    }
 }
