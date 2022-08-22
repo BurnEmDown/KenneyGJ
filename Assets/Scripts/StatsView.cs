@@ -6,6 +6,8 @@ public class StatsView : MonoBehaviour
 {
     public static StatsView Instance;
 
+    private static readonly Color defaultColor = Color.black;
+
     public Slider environmentBar;
     public TMP_Text popGrowthText;
     public TMP_Text foodText;
@@ -40,6 +42,19 @@ public class StatsView : MonoBehaviour
         UpdateHappiness(happiness);
         UpdateUnemployment(unemployment);
         UpdateEnvironment(environment);
+        UpdateDefaultTextColor();
+    }
+
+    private void UpdateDefaultTextColor()
+    {
+        popGrowthText.color = Color.black;
+        foodText.color = Color.black;
+        freeLandText.color = Color.black;
+        farmsText.color = Color.black;
+        moneyText.color = Color.black;
+        happinessText.color = Color.black;
+        unemploymentText.color = Color.black;
+        popText.color = Color.black;
     }
 
     public void UpdatePop(int pop)
@@ -91,5 +106,94 @@ public class StatsView : MonoBehaviour
     {
         bool activate = !statsInfo.activeInHierarchy;
         statsInfo.SetActive(activate);
+    }
+
+    public void UpdateStatTemp(Color color, Stats stat, int num, double percentage, bool isPercentage)
+    {
+        switch (stat)
+        {
+            case Stats.Population:
+                popText.color = color;
+                if (isPercentage)
+                {
+                    popText.text = StatsController.Instance.TempChangePopByPercentage(percentage).ToString() + "M";
+                }
+                else
+                {
+                    popText.text = StatsController.Instance.TempChangePopByAmount(num).ToString() + "M";
+                }
+                break;
+            case Stats.Food:
+                foodText.color = color;
+                if (isPercentage)
+                {
+                    foodText.text = StatsController.Instance.TempChangeFoodByPercentage(percentage).ToString();
+                }
+                else
+                {
+                    foodText.text = StatsController.Instance.TempChangeFoodByAmount(num).ToString();
+                }
+                break;
+            case Stats.Money:
+                moneyText.color = color;
+                if (isPercentage)
+                {
+                    moneyText.text = StatsController.Instance.TempChangeMoneyByPercentage(percentage).ToString() + "T$";
+                }
+                else
+                {
+                    moneyText.text = StatsController.Instance.TempChangeMoneyByAmount(num).ToString() + "T$";    
+                }
+                break;
+            case Stats.PopulationGrowth:
+                popGrowthText.color = color;
+                popGrowthText.text = StatsController.Instance.TempChangePopGrowthByAmount(percentage).ToString() + "%";
+                break;
+            case Stats.Farms:
+                farmsText.color = color;
+                if (isPercentage)
+                {
+                    farmsText.text = StatsController.Instance.TempChangeFarmsByPercentage(percentage).ToString();
+                }
+                else
+                {
+                    farmsText.text = StatsController.Instance.TempChangeFarmsByAmount(num).ToString();
+                }
+                break;
+            case Stats.FreeLand:
+                freeLandText.color = color;
+                if (isPercentage)
+                {
+                    freeLandText.text = StatsController.Instance.TempChangeFreeLandByPercentage(percentage).ToString();
+                }
+                else
+                {
+                    freeLandText.text = StatsController.Instance.TempChangeFreeLandByAmount(num).ToString();
+                }
+                break;
+            case Stats.Happiness:
+                happinessText.color = color;
+                happinessText.text = StatsController.Instance.TempChangeHappinessByAmount(num).ToString() + "%";
+                break;
+            case Stats.Environment:
+                environmentBar.value += num;
+                if (environmentBar.value > 5)
+                    environmentBar.value = 5;
+                if (environmentBar.value < 1)
+                    environmentBar.value = 1;
+                break;
+            case Stats.Unemployment:
+                if (num < 0)
+                {
+                    color = Color.green;
+                }
+                else
+                {
+                    color = Color.red;
+                }
+                unemploymentText.color = color;
+                unemploymentText.text = StatsController.Instance.TempChangeUnemploymentByAmount(num).ToString() + "%";
+                break;
+        }
     }
 }

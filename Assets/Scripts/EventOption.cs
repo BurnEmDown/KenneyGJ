@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [CreateAssetMenu]
@@ -10,6 +11,8 @@ public class EventOption : ScriptableObject
     public List<EventEffect> effects;
     public Button assignedButton;
 
+    EventTrigger eventTrigger = null;
+    
     public void ActivateEffects()
     {
         foreach (EventEffect effect in effects)

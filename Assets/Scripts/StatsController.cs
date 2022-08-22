@@ -432,6 +432,122 @@ public class StatsController : MonoBehaviour
     }
     
     #endregion
+
+    #region TempStatsChangers
+
+    public int TempChangePopByAmount(int amount)
+    {
+        return Population + amount;
+    }
+
+    public int TempChangePopByPercentage(double percentage)
+    {
+        int newPop = (int)(Population * percentage);
+        return newPop;
+    }
+
+    public double TempChangePopGrowthByAmount(double amount)
+    {
+        return PopulationGrowth + amount;
+    }
+
+    public int TempChangeFoodByAmount(int newFood)
+    {
+        return Food + newFood;
+    }
+
+    public int TempChangeFoodByPercentage(double percentage)
+    {
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change food with negative percentage");
+            return 0;
+        }
+        
+        int newFood = (int)(Food * percentage);
+        return newFood;
+    }
+
+    public int TempChangeFreeLandByAmount(int amount)
+    {
+        return FreeLand + amount;
+    }
+
+    public int TempChangeFreeLandByPercentage(double percentage)
+    {
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change free land with negative percentage");
+            return 0;
+        }
+        
+        int newFreeLand = (int)(FreeLand * percentage);
+        return newFreeLand;
+    }
+    
+    public int TempChangeFarmsByAmount(int amount)
+    {
+        return Farms + amount;
+    }
+    
+    public int TempChangeFarmsByPercentage(double percentage)
+    {
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change farms with negative percentage");
+            return 0;
+        }
+        
+        int newFarms = (int)(Farms * percentage);
+        return newFarms;
+    }
+    
+    public int TempChangeMoneyByAmount(int amount)
+    {
+        return Money + amount;
+    }
+
+    public int TempChangeMoneyByPercentage(double percentage)
+    {
+        if (percentage < 0)
+        {
+            Debug.LogError("tried to change with negative percentage");
+            return 0;
+        }
+
+        int newMoney = (int)(Money * percentage);
+        return newMoney;
+    }
+
+    public int TempChangeHappinessByAmount(int amount)
+    {
+        if (amount + Happiness > 100)
+        {
+            return 100;
+        }
+        if (Happiness - amount < 0)
+        {
+            return 0;
+        }
+        
+        return Happiness + amount;
+    }
+
+    public double TempChangeUnemploymentByAmount(int amount)
+    {
+        if (amount + Unemployment > 100)
+        {
+            return 100;
+        }
+        if (Unemployment - amount < 0)
+        {
+            return 0;
+        }
+
+        return Unemployment + amount;
+    }
+
+    #endregion
     void Awake()
     {
         if (Instance)
