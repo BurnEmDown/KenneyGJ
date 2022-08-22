@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionText: Invest a modest sum of money to encourage him
   effects:
-  - {fileID: 11400000, guid: 062bc8608ce3ac84ca605dc54b8d984e, type: 2}
+  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
   - {fileID: 11400000, guid: 0c06bbe7876a2d143b5ce59f9069a776, type: 2}
   - {fileID: 11400000, guid: 0bb3bdebac1bcbf4ea4e353275d38deb, type: 2}
   - {fileID: 11400000, guid: 72e1a67b08fcdc740af585711e84414a, type: 2}

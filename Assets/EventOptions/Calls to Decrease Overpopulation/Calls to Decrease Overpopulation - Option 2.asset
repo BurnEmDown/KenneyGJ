@@ -15,6 +15,6 @@ MonoBehaviour:
   optionText: Set mild measures to curb overpopulation
   effects:
   - {fileID: 11400000, guid: a89cd4a29964ff742aa76207c8e71be3, type: 2}
-  - {fileID: 11400000, guid: 062bc8608ce3ac84ca605dc54b8d984e, type: 2}
+  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
   - {fileID: 11400000, guid: 558c8c8110ad2564cb7bca527dd8e3aa, type: 2}
   assignedButton: {fileID: 0}

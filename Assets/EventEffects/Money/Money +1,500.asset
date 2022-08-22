@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5224ff8fa6954c228770d2a9c0cb8cc5, type: 3}
-  m_Name: Land -100
+  m_Name: Money +1,500
   m_EditorClassIdentifier: 
-  statAffected: 3
-  intAmount: -100
+  statAffected: 5
+  intAmount: 1000
   floatAmount: 0
   isPercentage: 0

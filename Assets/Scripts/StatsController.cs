@@ -12,7 +12,7 @@ public class StatsController : MonoBehaviour
     private const int START_FOOD = 15000;
     private const int START_FARMS = 150;
     private const int START_FREELAND = 100;
-    private const int START_MONEY = 15000;
+    private const int START_MONEY = 10000;
     private const int START_HAPPINESS = 80;
     private const double START_UNEMPLOYMENT = 10.0;
     private const float START_CREATIVE_POTENTIAL = 1.0f;

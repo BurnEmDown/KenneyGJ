@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66253cc38ca442e4a2bcec3476861763, type: 3}
-  m_Name: Great Engineer - Option 2
+  m_Name: Protests Option 3
   m_EditorClassIdentifier: 
-  optionText: Invest a modest sum of money to encourage him
+  optionText: Curb any protests, with force if necessary!
   effects:
-  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
-  - {fileID: 11400000, guid: 30c39eb75653a9d438d22e135870ed33, type: 2}
-  - {fileID: 11400000, guid: 2f1a46451e8bf53459253f5e0b5dc28c, type: 2}
+  - {fileID: 11400000, guid: 61b3fe57fb9323d4f898261670729cbc, type: 2}
+  - {fileID: 11400000, guid: 558c8c8110ad2564cb7bca527dd8e3aa, type: 2}
   assignedButton: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionText: Try to shelter the population that is in immediate danger
   effects:
-  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: f48eb16d91bda844b91e546a8b67f62f, type: 2}
   - {fileID: 11400000, guid: af9493137ff32584190b105ac1f57b37, type: 2}
   - {fileID: 11400000, guid: cbd3506e48b319644a244a8408ad7fc5, type: 2}
   - {fileID: 11400000, guid: 8dc1220b064d2f94ba1750cddee6eefa, type: 2}

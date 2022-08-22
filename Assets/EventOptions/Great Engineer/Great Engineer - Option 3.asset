@@ -15,7 +15,7 @@ MonoBehaviour:
   optionText: Invest a large sum of money to make sure his brilliance is put to good
     use
   effects:
-  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: f48eb16d91bda844b91e546a8b67f62f, type: 2}
   - {fileID: 11400000, guid: 1f5eb86a24fa04d4198c6109f81cbf1d, type: 2}
   - {fileID: 11400000, guid: ac1425f0c1d992e499705f83ee116cf5, type: 2}
   assignedButton: {fileID: 0}

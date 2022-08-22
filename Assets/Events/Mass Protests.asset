@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821432739b894473a029a943332a4bb7, type: 3}
+  m_Name: Mass Protests
+  m_EditorClassIdentifier: 
+  eventName: Mass Protests
+  eventText: The people are unhappy with your recent policies, how should we react?
+  eventOptions:
+  - {fileID: 11400000, guid: 4d791446f236b4e449d86cb44973e3ec, type: 2}
+  - {fileID: 11400000, guid: 003300873b00e4342b072212b8a51722, type: 2}
+  - {fileID: 11400000, guid: ce96aa11374099148bad43219aa8749d, type: 2}

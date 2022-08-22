@@ -15,5 +15,5 @@ MonoBehaviour:
   optionText: "We should increase the rate of our population\u2019s growth!"
   effects:
   - {fileID: 11400000, guid: 47aaf459a5ffac04a94f1050cbb63a04, type: 2}
-  - {fileID: 11400000, guid: 2486a2b4ad2f6e04a8c8f4b1fd313ec6, type: 2}
+  - {fileID: 11400000, guid: f48eb16d91bda844b91e546a8b67f62f, type: 2}
   assignedButton: {fileID: 0}
