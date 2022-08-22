@@ -8,6 +8,7 @@ public class EventsController : MonoBehaviour
     public static EventsController Instance;
 
     [SerializeField] private List<Event> quarterEventsList;
+    [SerializeField] private List<Event> badEventsList;
     [SerializeField] private List<Event> newYearEventsList;
 
     void Awake()
@@ -41,6 +42,16 @@ public class EventsController : MonoBehaviour
         EventsView.Instance.ShowEvent(quarterEvent, onComplete);
         quarterEvent.EnableAllOptions();
         DisableInvalidEventOptions(quarterEvent);
+    }
+    
+    public void ShowBadEvent(Action onComplete)
+    {
+        int eventNum = Random.Range(0, badEventsList.Count-1);
+
+        Event badEvent = badEventsList[eventNum];
+        EventsView.Instance.ShowEvent(badEvent, onComplete);
+        badEvent.EnableAllOptions();
+        DisableInvalidEventOptions(badEvent);
     }
 
     public void ShowNewYearEvent(Action onComplete)

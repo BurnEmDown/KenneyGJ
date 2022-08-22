@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TurnController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class TurnController : MonoBehaviour
     private const int START_QUARTER = 1;
 
     private const int END_YEAR = 2260;
+
+    private bool badEventThisYear = false;
     
     void Awake()
     {
@@ -53,29 +56,44 @@ public class TurnController : MonoBehaviour
         EventsController.Instance.ShowNewYearEvent(NextQuarter);
     }
 
-    public void NextQuarter()
+    private void NextQuarter()
     {
-        // show the new quarter event
-        EventsController.Instance.ShowNewEvent(() =>
+        if (!badEventThisYear)
         {
-            quarter++;
-            if (quarter == 5)
+            int rand = Random.Range(0, 3);
+            if (rand == 0)
             {
-                quarter = 1;
-                year++;
-                TurnView.Instance.UpdateDate(quarter, year);
+                badEventThisYear = true;
+                EventsController.Instance.ShowBadEvent(OnEventComplete);
+                return;
+            }
+        }
+        
+        // show the new quarter event
+        EventsController.Instance.ShowNewEvent(OnEventComplete);
+    }
 
-                if (year == END_YEAR)
-                {
+    private void OnEventComplete()
+    {
+        quarter++;
+        if (quarter == 5)
+        {
+            quarter = 1;
+            year++;
+            badEventThisYear = false;
+            TurnView.Instance.UpdateDate(quarter, year);
+
+            if (year == END_YEAR)
+            { 
                     // victory
-                }
-                NewYear();
             }
-            else
-            {
-                TurnView.Instance.UpdateDate(quarter);
-                NextQuarter();
-            }
-        });
+            NewYear();
+        }
+        else
+        {
+            TurnView.Instance.UpdateDate(quarter);
+            NextQuarter();
+        }
+        
     }
 }
