@@ -463,7 +463,7 @@ public class StatsController : MonoBehaviour
             Debug.LogError("tried to change food with negative percentage");
             return 0;
         }
-        
+
         int newFood = (int)(Food * percentage);
         return newFood;
     }
@@ -480,7 +480,7 @@ public class StatsController : MonoBehaviour
             Debug.LogError("tried to change free land with negative percentage");
             return 0;
         }
-        
+
         int newFreeLand = (int)(FreeLand * percentage);
         return newFreeLand;
     }
@@ -497,7 +497,7 @@ public class StatsController : MonoBehaviour
             Debug.LogError("tried to change farms with negative percentage");
             return 0;
         }
-        
+
         int newFarms = (int)(Farms * percentage);
         return newFarms;
     }

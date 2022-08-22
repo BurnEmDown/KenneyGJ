@@ -183,14 +183,7 @@ public class StatsView : MonoBehaviour
                     environmentBar.value = 1;
                 break;
             case Stats.Unemployment:
-                if (num < 0)
-                {
-                    color = Color.green;
-                }
-                else
-                {
-                    color = Color.red;
-                }
+                color = num < 0 ? Color.green : Color.red;
                 unemploymentText.color = color;
                 unemploymentText.text = StatsController.Instance.TempChangeUnemploymentByAmount(num).ToString() + "%";
                 break;
