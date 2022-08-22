@@ -337,6 +337,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1259974701895952324}
     m_Modifications:
+    - target: {fileID: 5659681655536679790, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659681655536679790, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 5659681655878521476, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
       propertyPath: m_Name
       value: EventTextBox
@@ -424,6 +432,22 @@ PrefabInstance:
     - target: {fileID: 5659681655878521477, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659681656226495470, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 131.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659681656226495470, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659681656226495471, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659681656226495471, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca6af18e5ce9624d939fb932a44a0ac, type: 3}
