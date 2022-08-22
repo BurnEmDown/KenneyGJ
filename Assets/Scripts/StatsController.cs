@@ -19,7 +19,7 @@ public class StatsController : MonoBehaviour
     private const int START_ENVIRONMENT = 5;
     
     private const int END_POP = 500;
-    private const int END_HAPPINESS = 50;
+    private const int END_HAPPINESS = 30;
     private const int END_ENVIRONMENT = 1;
 
     private int population;

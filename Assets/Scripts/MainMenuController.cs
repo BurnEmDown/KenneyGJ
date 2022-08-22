@@ -6,6 +6,7 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject storyBox;
     public GameObject explanationBox;
+    public GameObject creditsBox;
     
     void Awake()
     {
@@ -29,6 +30,7 @@ public class MainMenuController : MonoBehaviour
         bool activate = !storyBox.activeInHierarchy;
         storyBox.SetActive(activate);
         explanationBox.SetActive(false);
+        creditsBox.SetActive(false);
     }
 
     public void ExplanationButton()
@@ -36,10 +38,15 @@ public class MainMenuController : MonoBehaviour
         bool activate = !explanationBox.activeInHierarchy;
         explanationBox.SetActive(activate);
         storyBox.SetActive(false);
+        creditsBox.SetActive(false);
     }
 
-    public void OptionsButton()
+    public void CreditsButton()
     {
+        bool activate = !creditsBox.activeInHierarchy;
+        creditsBox.SetActive(activate);
+        storyBox.SetActive(false);
+        explanationBox.SetActive(false);
         
     }
 

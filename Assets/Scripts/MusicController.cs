@@ -21,11 +21,24 @@ public class MusicController : MonoBehaviour
 
     public void PlayMusic()
     {
+        if (musicSource.isPlaying) return;
         musicSource.Play();
     }
 
     public void StopPlayMusic()
     {
         musicSource.Stop();
+    }
+
+    public void OnClickMusicButton()
+    {
+        if (musicSource.isPlaying)
+        {
+            StopPlayMusic();
+        }
+        else
+        {
+            PlayMusic();
+        }
     }
 }
