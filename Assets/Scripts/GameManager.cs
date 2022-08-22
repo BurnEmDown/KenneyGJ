@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Game Over Scene");
     }
 
+    public void LoadVictoryScene()
+    {
+        SceneManager.LoadScene("Victory Scene");
+    }
+
     public void ExitGame()
     {
         Application.Quit();

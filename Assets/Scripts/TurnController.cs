@@ -84,8 +84,8 @@ public class TurnController : MonoBehaviour
             TurnView.Instance.UpdateDate(quarter, year);
 
             if (year == END_YEAR)
-            { 
-                    // victory
+            {
+                GameManager.Instance.LoadVictoryScene();
             }
             NewYear();
         }
