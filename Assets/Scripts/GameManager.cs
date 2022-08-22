@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadGameOverScene()
+    {
+        SceneManager.LoadScene("Game Over Scene");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
