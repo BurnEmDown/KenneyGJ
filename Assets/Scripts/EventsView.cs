@@ -58,27 +58,19 @@ public class EventsView : MonoBehaviour
 
     public void UpdateEventOptions(Event eventToShow)
     {
-        switch (eventToShow.eventOptions.Count)
-        {
-            case 1:
-                eventOptionAText.text = eventToShow.eventOptions[0].optionText;
-                break;
-            case 2:
-                eventOptionAText.text = eventToShow.eventOptions[0].optionText;
-                eventOptionBText.text = eventToShow.eventOptions[1].optionText;
-                break;
-            case 3:
-                eventOptionAText.text = eventToShow.eventOptions[0].optionText;
-                eventOptionBText.text = eventToShow.eventOptions[1].optionText;
-                eventOptionCText.text = eventToShow.eventOptions[2].optionText;
-                break;
-            case 4:
-                eventOptionAText.text = eventToShow.eventOptions[0].optionText;
-                eventOptionBText.text = eventToShow.eventOptions[1].optionText;
-                eventOptionCText.text = eventToShow.eventOptions[2].optionText;
-                eventOptionDText.text = eventToShow.eventOptions[3].optionText;
-                break;
-        }
+        int count = eventToShow.eventOptions.Count;
+
+        if (count >= 1)
+            eventOptionAText.text = eventToShow.eventOptions[0].optionText;
+        
+        if (count >= 2)
+            eventOptionBText.text = eventToShow.eventOptions[1].optionText;
+        
+        if(count >= 3)
+            eventOptionCText.text = eventToShow.eventOptions[2].optionText;
+        
+        if(count >= 4)
+            eventOptionDText.text = eventToShow.eventOptions[3].optionText;
     }
 
     public void ShowEventBoxAndText()
@@ -92,86 +84,50 @@ public class EventsView : MonoBehaviour
     {
         eventOptionsBox.SetActive(true);
 
-        switch (eventToShow.eventOptions.Count)
+        int count = eventToShow.eventOptions.Count;
+        if (count >= 1)
         {
-            case 1:
-                eventOptionA.gameObject.SetActive(true);
-                eventOptionAText.gameObject.SetActive(true);
-                eventToShow.eventOptions[0].assignedButton = eventOptionA;
-                eventOptionA.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[0];
-                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
-                break;
-            case 2:
-                eventOptionA.gameObject.SetActive(true);
-                eventOptionAText.gameObject.SetActive(true);
-                eventToShow.eventOptions[0].assignedButton = eventOptionA;
-                eventOptionA.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[0];
-                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionB.gameObject.SetActive(true);
-                eventOptionBText.gameObject.SetActive(true);
-                eventToShow.eventOptions[1].assignedButton = eventOptionB;
-                eventOptionB.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[1];
-                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
-                break;
-            case 3:
-                eventOptionA.gameObject.SetActive(true);
-                eventOptionAText.gameObject.SetActive(true);
-                eventToShow.eventOptions[0].assignedButton = eventOptionA;
-                eventOptionA.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[0];
-                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionB.gameObject.SetActive(true);
-                eventOptionBText.gameObject.SetActive(true);
-                eventToShow.eventOptions[1].assignedButton = eventOptionB;
-                eventOptionB.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[1];
-                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionC.gameObject.SetActive(true);
-                eventOptionCText.gameObject.SetActive(true);
-                eventToShow.eventOptions[2].assignedButton = eventOptionC;
-                eventOptionC.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[2];
-                eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
-                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(OnEventComplete);
-                break;
-            case 4:
-                eventOptionA.gameObject.SetActive(true);
-                eventOptionAText.gameObject.SetActive(true);
-                eventToShow.eventOptions[0].assignedButton = eventOptionA;
-                eventOptionA.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[0];
-                eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
-                eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionB.gameObject.SetActive(true);
-                eventOptionBText.gameObject.SetActive(true);
-                eventToShow.eventOptions[1].assignedButton = eventOptionB;
-                eventOptionB.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[1];
-                eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
-                eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionC.gameObject.SetActive(true);
-                eventOptionCText.gameObject.SetActive(true);
-                eventToShow.eventOptions[2].assignedButton = eventOptionC;
-                eventOptionC.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[2];
-                eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
-                eventToShow.eventOptions[2].assignedButton.onClick.AddListener(OnEventComplete);
-                eventOptionD.gameObject.SetActive(true);
-                eventOptionDText.gameObject.SetActive(true);
-                eventToShow.eventOptions[3].assignedButton = eventOptionD;
-                eventOptionD.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[3];
-                eventToShow.eventOptions[3].assignedButton.onClick.RemoveAllListeners();
-                eventToShow.eventOptions[3].assignedButton.onClick.AddListener(eventToShow.eventOptions[3].ActivateEffects);
-                eventToShow.eventOptions[3].assignedButton.onClick.AddListener(OnEventComplete);
-                break;
+            eventOptionA.gameObject.SetActive(true);
+            eventOptionAText.gameObject.SetActive(true);
+            eventToShow.eventOptions[0].assignedButton = eventOptionA;
+            eventOptionA.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[0];
+            eventToShow.eventOptions[0].assignedButton.onClick.RemoveAllListeners();
+            eventToShow.eventOptions[0].assignedButton.onClick.AddListener(eventToShow.eventOptions[0].ActivateEffects);
+            eventToShow.eventOptions[0].assignedButton.onClick.AddListener(OnEventComplete);
+        }
+
+        if (count >= 2)
+        {
+            eventOptionB.gameObject.SetActive(true);
+            eventOptionBText.gameObject.SetActive(true);
+            eventToShow.eventOptions[1].assignedButton = eventOptionB;
+            eventOptionB.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[1];
+            eventToShow.eventOptions[1].assignedButton.onClick.RemoveAllListeners();
+            eventToShow.eventOptions[1].assignedButton.onClick.AddListener(eventToShow.eventOptions[1].ActivateEffects);
+            eventToShow.eventOptions[1].assignedButton.onClick.AddListener(OnEventComplete);
+        }
+
+        if (count >= 3)
+        {
+            eventOptionC.gameObject.SetActive(true);
+            eventOptionCText.gameObject.SetActive(true);
+            eventToShow.eventOptions[2].assignedButton = eventOptionC;
+            eventOptionC.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[2];
+            eventToShow.eventOptions[2].assignedButton.onClick.RemoveAllListeners();
+            eventToShow.eventOptions[2].assignedButton.onClick.AddListener(eventToShow.eventOptions[2].ActivateEffects);
+            eventToShow.eventOptions[2].assignedButton.onClick.AddListener(OnEventComplete);
+        }
+
+        if (count >= 4)
+        {
+
+            eventOptionD.gameObject.SetActive(true);
+            eventOptionDText.gameObject.SetActive(true);
+            eventToShow.eventOptions[3].assignedButton = eventOptionD;
+            eventOptionD.GetComponent<EventOptionButton>().eventOption = eventToShow.eventOptions[3];
+            eventToShow.eventOptions[3].assignedButton.onClick.RemoveAllListeners();
+            eventToShow.eventOptions[3].assignedButton.onClick.AddListener(eventToShow.eventOptions[3].ActivateEffects);
+            eventToShow.eventOptions[3].assignedButton.onClick.AddListener(OnEventComplete);
         }
     }
 

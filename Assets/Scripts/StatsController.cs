@@ -558,8 +558,12 @@ public class StatsController : MonoBehaviour
         {
             Instance = this;
             SetInitialStats();
-            UpdateAllViews();
         }
+    }
+
+    private void Start()
+    {
+        UpdateAllViews();
     }
 
     public void UpdateAllViews()

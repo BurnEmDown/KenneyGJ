@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7987846939474170188}
   - component: {fileID: 7987846939474170190}
   - component: {fileID: 7987846939474170189}
-  - component: {fileID: 2786572830935299709}
   m_Layer: 5
   m_Name: DateHolder
   m_TagString: Untagged
@@ -81,20 +80,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2786572830935299709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7987846939474170195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554e3ebc7f904810a7eeee1ed104f1a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yearText: {fileID: 8208937376450284468}
-  quarterText: {fileID: 8208937376890787273}
 --- !u!1 &8208937376283337451
 GameObject:
   m_ObjectHideFlags: 0

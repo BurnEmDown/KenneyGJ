@@ -30,7 +30,7 @@ public class TurnController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Start()
     {
         year = START_YEAR;
         quarter = START_QUARTER;

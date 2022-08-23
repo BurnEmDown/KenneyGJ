@@ -106,6 +106,7 @@ public class StatsView : MonoBehaviour
     {
         bool activate = !statsInfo.activeInHierarchy;
         statsInfo.SetActive(activate);
+        GameManager.Instance.ExitGame();
     }
 
     public void UpdateStatTemp(Color color, Stats stat, int num, double percentage, bool isPercentage)
@@ -146,6 +147,7 @@ public class StatsView : MonoBehaviour
                 }
                 break;
             case Stats.PopulationGrowth:
+                color = percentage < 0 ? Color.red : Color.green;
                 popGrowthText.color = color;
                 popGrowthText.text = StatsController.Instance.TempChangePopGrowthByAmount(percentage).ToString() + "%";
                 break;
@@ -183,7 +185,7 @@ public class StatsView : MonoBehaviour
                     environmentBar.value = 1;
                 break;
             case Stats.Unemployment:
-                color = num < 0 ? Color.green : Color.red;
+                color = percentage < 0 ? Color.green : Color.red;
                 unemploymentText.color = color;
                 unemploymentText.text = StatsController.Instance.TempChangeUnemploymentByAmount(percentage).ToString() + "%";
                 break;
